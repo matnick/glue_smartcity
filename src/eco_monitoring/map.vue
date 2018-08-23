@@ -72,6 +72,7 @@ export default {
         station.radius = 7000;
         station.color = "#000000";
         console.log(station.aqi);
+        station.aqi = parseInt(station.aqi);
         if (station.aqi <= 1) {
           station.color = "#00FF00";
         }
