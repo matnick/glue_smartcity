@@ -71,10 +71,11 @@ export default {
         station.coordinates = { lat: station.lat, lng: station.lng };
         station.radius = 7000;
         station.color = "#000000";
-        if (station.aqi === 1) {
+        console.log(station.aqi);
+        if (station.aqi <= 1) {
           station.color = "#00FF00";
         }
-        if (station.aqi === 2) {
+        if (station.aqi > 1) {
           station.color = "#FFFF00";
         }
         if (station.aqi > 2) {
