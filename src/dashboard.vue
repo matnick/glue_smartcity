@@ -67,7 +67,7 @@
                         <v-card color="blue">
                            <l-map :zoom="map.zoom" :center="map.center">
                               <l-tile-layer :url="map.url" :attribution="map.attribution"></l-tile-layer>
-                              <template v-for="marker in map.markers">
+                              <template v-for="marker in getMarkers">
                                  <l-marker :lat-lng="marker.coordinates" v-bind:key="marker.name"></l-marker>
                               </template>
                            </l-map>
@@ -192,62 +192,10 @@ export default {
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png",
       attribution:
         '&copy; <a  href="http://openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-      markers: [
-        {
-          coordinates: L.latLng(55.696623, 37.356674),
-          name: "Waste container #23",
-          type: "waste"
-        },
-        {
-          coordinates: L.latLng(55.696342, 37.359745),
-          name: "Waste container #65",
-          type: "waste"
-        },
-        {
-          coordinates: L.latLng(55.699384, 37.366796),
-          name: "Waste container #82",
-          type: "waste"
-        },
-        {
-          coordinates: L.latLng(55.70835, 37.374306),
-          name: "Waste container #12",
-          type: "waste"
-        },
-        {
-          coordinates: L.latLng(55.683824, 37.335218),
-          name: "Waste container #45",
-          type: "waste"
-        },
-        {
-          coordinates: L.latLng(55.680333, 37.345947),
-          name: "Waste container #88",
-          type: "waste"
-        },
-        {
-          coordinates: L.latLng(55.694659, 37.3438),
-          name: "Waste container #92",
-          type: "waste"
-        },
-        {
-          coordinates: L.latLng(55.685413, 37.353031),
-          name: "Waste container #10",
-          type: "waste"
-        },
-        {
-          coordinates: L.latLng(55.679254, 37.34153),
-          name: "Waste container #16",
-          type: "waste"
-        }
-      ]
+        markers: [
+        ],
     },
-    waste: {
-      color: "nokia_green",
-      data: [
-        { title: "<20%", value: 4, color: "#039BE5" },
-        { title: "<80%", value: 5, color: "#8D6E63" },
-        { title: ">80%", value: 1, color: "#D4E157" }
-      ]
-    },
+    interval:null,
     parking: {
       free: 61,
       time: 18,
@@ -337,6 +285,7 @@ export default {
   },
   beforeDestroy: function() {
     clearInterval(this.random_interval);
+    clearInterval(this.waste_interval);
   },
   methods: {
     update_random_values: function() {
@@ -349,8 +298,23 @@ export default {
       const min_value = value * 0.98;
       const randomizer = value * 0.05 * Math.random();
       return parseInt(min_value + randomizer);
-    }
-  }
+    },
+  },
+    mounted: function() {
+        this.$store.dispatch("getWasteData").then(()=>{
+            this.waste_interval = setInterval(function () {
+                this.$store.dispatch("getWasteData");
+            }.bind(this), 3000);
+        }).catch();
+    },
+    computed: {
+        getMarkers () {
+            return this.$store.getters.getWasteMarkers;
+        },
+        waste () {
+            return this.$store.getters.getWasteLevelsFillingChart;
+        }
+    },
 };
 </script>
 

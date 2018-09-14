@@ -33,7 +33,16 @@ import Vue from "vue";
 export default {
   data: () => ({
     visible: false,
-    values: {}
+    values: {
+        name : '',
+        status: '',
+        level: '',
+        battery: '',
+        coordinates: {
+            lat : '',
+            lng : ''
+        },
+    }
   }),
   methods: {
     show(item) {
