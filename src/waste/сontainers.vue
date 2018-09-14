@@ -93,7 +93,6 @@ Vue.use(VueAxios, Axios);
 
 import binstable from "./components/binstable.vue";
 Vue.component("binstable", binstable);
-import table_data from "!json-loader!./containers.json";
 
 import L from "leaflet";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
@@ -116,14 +115,6 @@ export default {
   },
 
   data: () => ({
-    waste_filling_levels_chart: {
-      dim: "name",
-      height: "150",
-      width: "150",
-      selector: "#waste_filling_levels_chart",
-      metric: "value",
-      data: {}
-    },
     daily_filling_levels_chart: {
       dim: "name",
       height: "150",
@@ -146,18 +137,29 @@ export default {
       url: "https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
     },
     selected: [],
-    online: 0,
-    containers: {}
+    online: 0
   }),
-  created: function() {
-    Vue.set(this, "containers", table_data);
-  },
   mounted: function() {
-    this.waste_filling_levels_chart.data = this.calc_filling_levels();
-    this.batteries_levels_chart.data = this.calc_battery_levels();
-    this.daily_filling_levels_chart.data = this.calc_daily_filling_levels();
-    this.online = this.calc_online();
+    this.$store.dispatch("getWasteData").then(() => {
+        this.batteries_levels_chart.data = this.calc_battery_levels();
+        this.daily_filling_levels_chart.data = this.calc_daily_filling_levels();
+        this.online = this.calc_online();
+        this.waste_interval = setInterval(function () {
+            this.$store.dispatch("getWasteData");
+        }.bind(this), 3000);
+    }).catch();
   },
+    computed: {
+        containers () {
+            return this.$store.getters.getWasteMarkers;
+        },
+        waste_filling_levels_chart() {
+            return this.$store.getters.getWasteLevelsFillingChart;
+        }
+    },
+    beforeDestroy: function() {
+        clearInterval(this.waste_interval);
+    },
   methods: {
     showbindetails(item) {
       this.$refs.bindetails.show(item);
@@ -188,21 +190,6 @@ export default {
       this.map.center.lat = item.coordinates.lat;
       this.map.center.lng = item.coordinates.lng;
       this.map.zoom = 15;
-    },
-    calc_filling_levels() {
-      let count_20 = 0;
-      let count_80 = 0;
-      let count_100 = 0;
-      for (let index = 0; index < this.containers.length; index++) {
-        if (this.containers[index].level < 20) count_20++;
-        else if (this.containers[index].level <= 80) count_80++;
-        else if (this.containers[index].level > 80) count_100++;
-      }
-      return [
-        { title: "<20%", value: count_20, color: "#039BE5" },
-        { title: "<80%", value: count_80, color: "#8D6E63" },
-        { title: ">80%", value: count_100, color: "#D4E157" }
-      ];
     },
     calc_online() {
       let online = 0;

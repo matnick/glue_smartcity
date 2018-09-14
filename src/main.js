@@ -164,7 +164,99 @@ const router = new VueRouter({
       path: '*',
       redirect: '/dashboard'
    }]
-})
+});
+
+import Axios from "axios";
+import VueAxios from "vue-axios";
+import Vuex from 'vuex'
+Vue.use(Vuex, VueAxios, Axios);
+
+const store = new Vuex.Store({
+    state: {
+        waste_markers: [],
+        waste_filling_levels_chart: {
+            dim: "name",
+            height: "150",
+            width: "150",
+            selector: "#waste_filling_levels_chart",
+            metric: "value",
+            data: {}
+        }
+    },
+    mutations: {
+        updateWasteMarkers(state, items) {
+            Object.keys(items).forEach(function(key){
+                let item_type = key;
+                let item_id = Object.keys(items[key])[0];
+                if (state.waste_markers.filter(marker => marker.id === item_id).length === 0) {
+                    state.waste_markers.push({
+                        id: item_id,
+                        name: item_type +" - "+ item_id,
+                        vendor: "CleanCity",
+                        coordinates: {
+                            lat: items[key][item_id].latitude.value,
+                            lng: items[key][item_id].longitude.value,
+                        },
+                        draggable:true,
+                        visible:true,
+                        selected:false,
+                        tooltip: "Waste container "+item_type,
+                        level: items[key][item_id].current_fill_level.value,
+                        battery: items[key][item_id].battery_health.value,
+                        status: "online",
+                        type: "waste"
+                    });
+                } else {
+                    state.waste_markers.forEach(function(marker){
+                        if (marker.id === item_id) {
+                            marker.coordinates.lat = items[key][item_id].latitude.value;
+                            marker.coordinates.lng = items[key][item_id].longitude.value;
+                            marker.level = items[key][item_id].current_fill_level.value;
+                            marker.battery = items[key][item_id].battery_health.value;
+                        }
+                    })
+                }
+            });
+            store.commit("updateWasteLevelsFillingChart");
+        },
+        updateWasteLevelsFillingChart(state) {
+                let count_20 = 0;
+                let count_80 = 0;
+                let count_100 = 0;
+                for (let index = 0; index < state.waste_markers.length; index++) {
+                    if (state.waste_markers[index].level < 20) count_20++;
+                    else if (state.waste_markers[index].level <= 80) count_80++;
+                    else if (state.waste_markers[index].level > 80) count_100++;
+                }
+                state.waste_filling_levels_chart.data =  [
+                    { title: "<20%", value: count_20, color: "#039BE5" },
+                    { title: "<80%", value: count_80, color: "#8D6E63" },
+                    { title: ">80%", value: count_100, color: "#D4E157" }
+                ];
+        }
+    },
+    getters: {
+        getWasteMarkers: state => {
+            return state.waste_markers;
+        },
+        getWasteLevelsFillingChart: state => {
+            return state.waste_filling_levels_chart;
+        }
+    },
+    actions: {
+        getWasteData: ({ commit }) => {
+            Axios.get(
+                "https://sk.iot.nokia.com/we/cleancity_data"
+            )
+                .then(response => {
+                    commit("updateWasteMarkers", response.data.cleancity)
+                })
+                .catch(error => {
+                    console.log(error);
+                });
+        }
+    }
+});
 
 import L from 'leaflet'
 
@@ -179,5 +271,6 @@ L.Icon.Default.mergeOptions({
 new Vue({
    el: '#app',
    router,
+   store,
    render: h => h(main_page)
 })
