@@ -178,6 +178,7 @@ const store = new Vuex.Store({
             dim: "name",
             height: "150",
             width: "150",
+            color: "nokia_gray_2",
             selector: "#waste_filling_levels_chart",
             metric: "value",
             data: {}
