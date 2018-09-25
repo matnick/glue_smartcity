@@ -181,7 +181,16 @@ const store = new Vuex.Store({
             selector: "#waste_filling_levels_chart",
             metric: "value",
             data: {}
-        }
+        },
+        waste_batteries_levels_chart: {
+            dim: "name",
+            height: "150",
+            width: "150",
+            selector: "#batteries_levels_chart",
+            metric: "value",
+            data: {}
+        },
+        waste_online_containers : 0
     },
     mutations: {
         updateWasteMarkers(state, items) {
@@ -218,6 +227,8 @@ const store = new Vuex.Store({
                 }
             });
             store.commit("updateWasteLevelsFillingChart");
+            store.commit("updateBatteryLevels");
+            store.commit("updateOnlineContainers");
         },
         updateWasteLevelsFillingChart(state) {
                 let count_20 = 0;
@@ -233,6 +244,36 @@ const store = new Vuex.Store({
                     { title: "<80%", value: count_80, color: "#8D6E63" },
                     { title: ">80%", value: count_100, color: "#D4E157" }
                 ];
+        },
+        updateBatteryLevels(state) {
+            let count_20 = 0;
+            let count_80 = 0;
+            let count_100 = 0;
+            for (let index = 0; index < state.waste_markers.length; index++) {
+                if (state.waste_markers[index].battery < 20) count_20++;
+                else if (state.waste_markers[index].battery <= 80) count_80++;
+                else if (state.waste_markers[index].battery > 80) count_100++;
+            }
+            state.waste_batteries_levels_chart.data = [
+                { title: "<20%", value: count_20, color: "#039BE5" },
+                { title: "<80%", value: count_80, color: "#8D6E63" },
+                { title: ">80%", value: count_100, color: "#D4E157" }
+            ];
+        },
+        updateOnlineContainers(state) {
+            let count_20 = 0;
+            let count_80 = 0;
+            let count_100 = 0;
+            for (let index = 0; index < state.waste_markers.length; index++) {
+                if (state.waste_markers[index].battery < 20) count_20++;
+                else if (state.waste_markers[index].battery <= 80) count_80++;
+                else if (state.waste_markers[index].battery > 80) count_100++;
+            }
+            state.waste_batteries_levels_chart.data = [
+                { title: "<20%", value: count_20, color: "#039BE5" },
+                { title: "<80%", value: count_80, color: "#8D6E63" },
+                { title: ">80%", value: count_100, color: "#D4E157" }
+            ];
         }
     },
     getters: {
@@ -241,6 +282,9 @@ const store = new Vuex.Store({
         },
         getWasteLevelsFillingChart: state => {
             return state.waste_filling_levels_chart;
+        },
+        getBatteriesLevelsChart: state => {
+            return state.waste_batteries_levels_chart;
         }
     },
     actions: {
