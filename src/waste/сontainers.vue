@@ -58,7 +58,7 @@
                            <v-card-title primary class="title">Online
                            </v-card-title>
                            <v-card-text class="pt-0">
-                              <span class="display-3 mx-auto">{{ online }}/{{ containers.length }}</span>
+                              <span class="display-3 mx-auto">{{ containers_online }}/{{ containers.length }}</span>
                               <span class="display-1"> containers online</span>
                            </v-card-text>
                         </v-card>
@@ -72,7 +72,7 @@
                            <v-card-title primary class="title">Batteries
                            </v-card-title>
                            <v-card-text class="pt-0 chart">
-                              <donut-chart :data="batteries_levels_chart.data"></donut-chart>
+                              <donut-chart :data="battery_levels_chart.data"></donut-chart>
                            </v-card-text>
                         </v-card>
                      </v-flex>
@@ -113,21 +113,12 @@ export default {
     DonutChart,
     BarChart
   },
-
   data: () => ({
     daily_filling_levels_chart: {
       dim: "name",
       height: "150",
       width: "150",
       selector: "#daily_filling_levels_chart",
-      metric: "value",
-      data: {}
-    },
-    batteries_levels_chart: {
-      dim: "name",
-      height: "150",
-      width: "150",
-      selector: "#batteries_levels_chart",
       metric: "value",
       data: {}
     },
@@ -141,13 +132,12 @@ export default {
   }),
   mounted: function() {
     this.$store.dispatch("getWasteData").then(() => {
-        this.batteries_levels_chart.data = this.calc_battery_levels();
         this.daily_filling_levels_chart.data = this.calc_daily_filling_levels();
-        this.online = this.calc_online();
         this.waste_interval = setInterval(function () {
             this.$store.dispatch("getWasteData");
         }.bind(this), 3000);
     }).catch();
+    console.log(this.battery_levels_chart.data);
   },
     computed: {
         containers () {
@@ -155,6 +145,14 @@ export default {
         },
         waste_filling_levels_chart() {
             return this.$store.getters.getWasteLevelsFillingChart;
+        },
+        battery_levels_chart() {
+            return this.$store.getters.getBatteriesLevelsChart;
+        },
+        containers_online () {
+            return this.containers.filter(function(data){
+                return data.status === "online"
+            }).length;
         }
     },
     beforeDestroy: function() {
@@ -181,7 +179,6 @@ export default {
         }
       }
     },
-
     table_click(item) {
       this.containers.forEach(container => {
         container.selected = false;
@@ -190,29 +187,6 @@ export default {
       this.map.center.lat = item.coordinates.lat;
       this.map.center.lng = item.coordinates.lng;
       this.map.zoom = 15;
-    },
-    calc_online() {
-      let online = 0;
-      for (let index = 0; index < this.containers.length; index++) {
-        if (this.containers[index].status == "online") online++;
-      }
-      console.log(online);
-      return online;
-    },
-    calc_battery_levels() {
-      let count_20 = 0;
-      let count_80 = 0;
-      let count_100 = 0;
-      for (let index = 0; index < this.containers.length; index++) {
-        if (this.containers[index].battery < 20) count_20++;
-        else if (this.containers[index].battery <= 80) count_80++;
-        else if (this.containers[index].battery > 80) count_100++;
-      }
-      return [
-        { title: "<20%", value: count_20, color: "#039BE5" },
-        { title: "<80%", value: count_80, color: "#8D6E63" },
-        { title: ">80%", value: count_100, color: "#D4E157" }
-      ];
     },
     calc_daily_filling_levels() {
       const start=new Date()-7*86400000;
