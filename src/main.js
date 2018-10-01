@@ -168,11 +168,13 @@ const router = new VueRouter({
 
 import Axios from "axios";
 import VueAxios from "vue-axios";
-import Vuex from 'vuex'
-Vue.use(Vuex, VueAxios, Axios);
+import Vuex from 'vuex';
+import Vue_i18n from 'vue-i18n';
+Vue.use(Vuex, VueAxios, Axios, Vue_i18n);
 
 const store = new Vuex.Store({
     state: {
+        locale: "ru",
         waste_markers: [],
         waste_filling_levels_chart: {
             dim: "name",
@@ -229,7 +231,6 @@ const store = new Vuex.Store({
             });
             store.commit("updateWasteLevelsFillingChart");
             store.commit("updateBatteryLevels");
-            store.commit("updateOnlineContainers");
         },
         updateWasteLevelsFillingChart(state) {
                 let count_20 = 0;
@@ -260,6 +261,9 @@ const store = new Vuex.Store({
                 { title: "<80%", value: count_80, color: "#8D6E63" },
                 { title: ">80%", value: count_100, color: "#D4E157" }
             ];
+        },
+        updateLocale(state, locale) {
+            this.state.locale = locale;
         }
     },
     getters: {
@@ -271,6 +275,9 @@ const store = new Vuex.Store({
         },
         getBatteriesLevelsChart: state => {
             return state.waste_batteries_levels_chart;
+        },
+        getLocale: state => {
+            return state.locale;
         }
     },
     actions: {
@@ -284,6 +291,9 @@ const store = new Vuex.Store({
                 .catch(error => {
                     console.log(error);
                 });
+        },
+        changeLocale: ({ commit }, locale) => {
+            commit("updateLocale", locale)
         }
     }
 });
@@ -298,9 +308,16 @@ L.Icon.Default.mergeOptions({
    shadowUrl: require('../node_modules/leaflet/dist/images/marker-shadow.png')
 })
 
+const messages = require ('./assets/translation.json');
+const i18n = new Vue_i18n({
+    locale: store.state.locale,
+    messages,
+})
+
 new Vue({
    el: '#app',
    router,
    store,
+   i18n,
    render: h => h(main_page)
 })

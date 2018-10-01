@@ -39,7 +39,7 @@
                   <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card color="blue lighten-3" dark>
-                           <v-card-title primary class="title">Total parking load</v-card-title>
+                           <v-card-title primary class="title">{{$t("message.total_parking_load")}}</v-card-title>
                            <v-card-text class="pt-0 chart">
                               <donut-chart :data="this.get_free_chart_data()"></donut-chart>
                            </v-card-text>
@@ -51,7 +51,7 @@
                   <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card color="green lighten-3" dark>
-                           <v-card-title primary class="title">Parking congestion</v-card-title>
+                           <v-card-title primary class="title">{{$t("message.parking_congestion")}}</v-card-title>
                            <v-card-text class="pt-0 chart">
                               <donut-chart :data="this.get_used_parkings_stats()"></donut-chart>
                            </v-card-text>
@@ -63,7 +63,7 @@
                   <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card color="teal lighten-3" dark>
-                           <v-card-title primary class="title">Max occupancy per day</v-card-title>
+                           <v-card-title primary class="title">{{$t("message.max_occupancy_per_day")}}</v-card-title>
                            <v-card-text class="pt-0 chart">
                               <bar-chart :data="this.get_random_data()" :fillParent="true"></bar-chart>
                            </v-card-text>
@@ -82,8 +82,9 @@ import Vue from "vue";
 import Axios from "axios";
 import VueAxios from "vue-axios";
 import moment from "moment";
+import Vue_i18n from 'vue-i18n';
 import "moment/locale/ru";
-Vue.use(VueAxios, Axios);
+Vue.use(VueAxios, Axios, Vue_i18n);
 
 import { LMap, LTileLayer, LPolygon, LPopup } from "vue2-leaflet";
 
@@ -124,16 +125,16 @@ export default {
       let text =
         name +
         "<br>" +
-        "All: " +
+        this.$i18n.t("message.all") + ": " +
         all_places +
         "<br>" +
-        "Occuped: " +
+        this.$i18n.t("message.occupied") + ": " +
         occuped +
         " (" +
         occuped_percent +
         "%)" +
         "<br>" +
-        "Free: " +
+        this.$i18n.t("message.free") + ": " +
         free;
       return text;
     },
@@ -161,8 +162,8 @@ export default {
       });
 
       return [
-        { title: "Free", value: free, color: "#039BE5" },
-        { title: "Occuped", value: placesTotal - free, color: "#8D6E63" }
+        { title: this.$i18n.t("message.free"), value: free, color: "#039BE5" },
+        { title: this.$i18n.t("message.occupied"), value: placesTotal - free, color: "#8D6E63" }
       ];
     },
     get_used_parkings_stats() {

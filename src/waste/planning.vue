@@ -4,10 +4,10 @@
          <v-flex d-flex>
             <div>
                <v-btn @click="show_route" :class="this.get_button_class()">
-                 Build Route
+                  {{$t("message.build_route")}}
                  <v-progress-circular v-if="show_progress" indeterminate color="primary" class="progress" size="24"></v-progress-circular>
                </v-btn>
-               <v-btn @click="hide_route">Clear Route</v-btn>
+               <v-btn @click="hide_route">{{$t("message.clear_route")}}</v-btn>
             </div>
          </v-flex>
          <v-flex d-flex md12>

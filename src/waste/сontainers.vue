@@ -29,7 +29,7 @@
                   <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card color="cyan lighten-2" dark>
-                           <v-card-title primary class="title">Waste collection efficiency
+                           <v-card-title primary class="title">{{$t("message.waste_collection_efficiency")}}
                            </v-card-title>
                            <v-card-text class="pt-0 chart">
                               <bar-chart :data="daily_filling_levels_chart.data" :maxValue="100" barColor="#BDBDBD" :fillParent="true"></bar-chart>
@@ -42,7 +42,7 @@
                   <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card color="indigo lighten-2" dark>
-                           <v-card-title primary class="title">Filling level
+                           <v-card-title primary class="title">{{$t("message.filling_level")}}
                            </v-card-title>
                            <v-card-text class="pt-0 chart">
                               <donut-chart :data="waste_filling_levels_chart.data"></donut-chart>
@@ -55,11 +55,11 @@
                   <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card color="blue lighten-3" dark>
-                           <v-card-title primary class="title">Online
+                           <v-card-title primary class="title">{{$t("message.online")}}
                            </v-card-title>
                            <v-card-text class="pt-0">
                               <span class="display-3 mx-auto">{{ containers_online }}/{{ containers.length }}</span>
-                              <span class="display-1"> containers online</span>
+                              <span class="headline"> {{$t("message.containers_online")}}</span>
                            </v-card-text>
                         </v-card>
                      </v-flex>
@@ -69,7 +69,7 @@
                   <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card color="teal lighten-2" dark>
-                           <v-card-title primary class="title">Batteries
+                           <v-card-title primary class="title">{{$t("message.batteries")}}
                            </v-card-title>
                            <v-card-text class="pt-0 chart">
                               <donut-chart :data="battery_levels_chart.data"></donut-chart>

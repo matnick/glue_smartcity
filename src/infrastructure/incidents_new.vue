@@ -27,31 +27,38 @@
 
 
 <script>
+import Vue from "vue";
+import Vue_i18n from 'vue-i18n';
+Vue.use(Vue_i18n);
+
 import tableData from "!json-loader!./incidents.json";
 
 export default {
   data: () => ({
     pagination: { rowsPerPage: 25 },
-
-    table: tableData,
-    headers: [
-      {
-        text: "System",
-        value: "system",
-        align: "left"
-      },
-      {
-        text: "Status",
-        value: "status",
-        align: "center"
-      },
-      {
-        text: "Incidents",
-        value: "incidents",
-        align: "center"
+    table: tableData
+  }),
+  computed: {
+      headers () {
+          return [
+              {
+                  text: this.$i18n.t("message.system"),
+                  value: "system",
+                  align: "left"
+              },
+              {
+                  text: this.$i18n.t("message.status"),
+                  value: "status",
+                  align: "center"
+              },
+              {
+                  text: this.$i18n.t("message.incidents"),
+                  value: "incidents",
+                  align: "center"
+              }
+          ]
       }
-    ]
-  })
+  }
 };
 </script>
 

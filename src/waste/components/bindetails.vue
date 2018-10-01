@@ -7,20 +7,20 @@
             </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
-               <div class="subheading">Utilization level: {{values.level}}%</div>
+               <div class="subheading">{{$t("message.utilization_level")}}: {{values.level}}%</div>
                <v-progress-linear v-model="values.level" height="20" color="secondary"></v-progress-linear>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-text>
-               <div class="subheading">Battery level: {{values.battery}}%</div>
+               <div class="subheading">{{$t("message.battery_level")}}: {{values.battery}}%</div>
                <v-progress-linear v-model="values.battery" height="20" color="secondary"></v-progress-linear>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-text>
-               <div class="subheading ">Location: {{values.coordinates.lat}}, {{values.coordinates.lng}}</div>
+               <div class="subheading ">{{$t("message.location")}}: {{values.coordinates.lat}}, {{values.coordinates.lng}}</div>
             </v-card-text>
             <v-card-actions>
-               <v-btn color="primary " flat @click.stop="visible=false">Close</v-btn>
+               <v-btn color="primary " flat @click.stop="visible=false">{{$t("message.close")}}</v-btn>
             </v-card-actions>
          </v-card>
       </v-dialog>
@@ -28,8 +28,6 @@
 </template>
 
 <script>
-import Vue from "vue";
-
 export default {
   data: () => ({
     visible: false,

@@ -7,21 +7,21 @@
             </v-card-title>
             <v-divider></v-divider>
             <v-card-text>
-               <div class="subheading">Free: {{Math.round(values.free / values.places * 100)}}%</div>
+               <div class="subheading">{{$t("message.free")}}: {{Math.round(values.free / values.places * 100)}}%</div>
                <v-progress-linear :value="this.get_progress(values)" height="20" color="secondary"></v-progress-linear>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-text class="chart">
-              <div class="subheading">Parking Stats</div>
+              <div class="subheading">{{$t("message.parking_stats")}}</div>
               <bar-chart :data="this.get_random_data()"></bar-chart>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-text>
-              <div class="subheading">Address: {{values.address}}</div>
+              <div class="subheading">{{$t("message.address")}}: {{values.address}}</div>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-actions>
-               <v-btn color="primary " flat @click.stop="visible=false">Close</v-btn>
+               <v-btn color="primary " flat @click.stop="visible=false">{{$t("message.close")}}</v-btn>
             </v-card-actions>
          </v-card>
       </v-dialog>
@@ -32,6 +32,7 @@
 import Vue from "vue";
 import moment from "moment";
 import 'moment/locale/ru';
+
 
 import BarChart from "./../../common/charts/BarChart";
 

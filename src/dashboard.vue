@@ -1,12 +1,11 @@
 <template>
    <v-container grid-list-md fill-height fluid>
-
       <v-layout column>
          <v-flex d-flex md4>
             <v-layout class="fix-layout" row wrap>
                <v-flex d-flex md3>
                   <v-card :color="waste.color" to="/waste/containers">
-                     <v-card-title primary class="title">Waste
+                     <v-card-title primary class="title">{{$t("message.waste")}}
                         <v-spacer></v-spacer>
                         <v-icon>fa-trash</v-icon>
                      </v-card-title>
@@ -20,15 +19,15 @@
                      <div class="chart-background">
                         <bar-chart :data="parking.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                      </div>
-                     <v-card-title primary class="title">Parking
+                     <v-card-title primary class="title">{{$t("message.parking")}}
                         <v-spacer></v-spacer>
                         <v-icon>fa-car</v-icon>
                      </v-card-title>
                      <v-card-text>
-                        <span class="title">Free: </span>
+                        <span class="title">{{$t("message.free")}}: </span>
                         <span class="headline">{{ get_randomized_value(parking.free) }} %</span><br>
-                        <span class="title">Average park time: </span>
-                        <span class="headline">{{ parking.time }} min</span>
+                        <span class="title">{{$t("message.average_park_time")}}: </span>
+                        <span class="headline">{{ parking.time }} {{$t("message.minutes_short")}}</span>
                      </v-card-text>
                   </v-card>
                </v-flex>
@@ -37,21 +36,21 @@
                      <div class="chart-background">
                         <bar-chart :data="lamps.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                      </div>
-                     <v-card-title primary class="title">Smart Lighting
+                     <v-card-title primary class="title">{{$t("message.smart_lighting")}}
                         <v-spacer></v-spacer>
                         <v-icon>fa-lightbulb</v-icon>
                      </v-card-title>
                      <v-card-text>
-                        <span class="title">Lamps on: </span>
+                        <span class="title">{{$t("message.lamps_on")}}: </span>
                         <span class="headline">{{ get_randomized_value(lamps.power_on) }}/{{ lamps.all }}</span><br>
-                        <span class="title">Consumption: </span>
-                        <span class="headline">{{ get_randomized_value(lamps.power) }} KW</span>
+                        <span class="title">{{$t("message.consumption")}}: </span>
+                        <span class="headline">{{ get_randomized_value(lamps.power) }} {{$t("message.kilowatt")}}</span>
                      </v-card-text>
                   </v-card>
                </v-flex>
                <v-flex d-flex md3>
                   <v-card :color="video.color" to="/safety/video" class="card-image" style="background-image: url(http://www.intek-m.ru/img/cams/cam_17/17_camera.jpg)">
-                     <v-card-title primary class="title">Video
+                     <v-card-title primary class="title">{{$t("message.video")}}
                         <v-spacer></v-spacer>
                         <v-icon>fa-video</v-icon>
                      </v-card-title>
@@ -86,19 +85,19 @@
                                        <div class="chart-background">
                                           <bar-chart :data="meters.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                                        </div>
-                                       <v-card-title primary class="title">Meters
+                                       <v-card-title primary class="title">{{$t("message.meters")}}
                                           <v-spacer></v-spacer>
                                           <v-icon>fa-tachometer-alt</v-icon>
                                        </v-card-title>
                                        <v-card-text>
-                                          <span class="title">Households in: </span>
+                                          <span class="title">{{$t("message.households_in")}}: </span>
                                           <span class="headline">{{ meters.households }} %</span><br>
-                                          <span class="title">Power: </span>
-                                          <span class="headline">{{ get_randomized_value(meters.power) }} KW</span><br>
-                                          <span class="title">Water: </span>
-                                          <span class="headline">{{ get_randomized_value(meters.water) }} m³</span><br>
-                                          <span class="title">Gas: </span>
-                                          <span class="headline">{{ get_randomized_value(meters.gas) }} m³</span><br>
+                                          <span class="title">{{$t("message.power")}}: </span>
+                                          <span class="headline">{{ get_randomized_value(meters.power) }} {{$t("message.kilowatt")}}</span><br>
+                                          <span class="title">{{$t("message.water")}}: </span>
+                                          <span class="headline">{{ get_randomized_value(meters.water) }} {{$t("message.meters_cubic")}}</span><br>
+                                          <span class="title">{{$t("message.gas")}}: </span>
+                                          <span class="headline">{{ get_randomized_value(meters.gas) }} {{$t("message.meters_cubic")}}</span><br>
                                        </v-card-text>
                                     </v-card>
                                  </v-flex>
@@ -109,12 +108,12 @@
                                              <div class="chart-background">
                                                 <bar-chart :data="air.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                                              </div>
-                                             <v-card-title primary class="title">Air
+                                             <v-card-title primary class="title">{{$t("message.air")}}
                                                 <v-spacer></v-spacer>
                                                 <v-icon>fa-tree</v-icon>
                                              </v-card-title>
                                              <v-card-text>
-                                                <span class="title">Quality grade: </span>
+                                                <span class="title">{{$t("message.quality_grade")}}: </span>
                                                 <span class="headline">{{ air.grade }}</span>
                                              </v-card-text>
                                           </v-card>
@@ -126,7 +125,7 @@
                                                 <v-icon>fa-cloud</v-icon>
                                              </v-card-title>
                                              <v-card-text>
-                                                <span class="title">Weather </span>
+                                                <span class="title">{{$t("message.weather")}} </span>
                                                 <span class="headline">{{ weather.temp }}C</span>
                                              </v-card-text>
                                           </v-card>
@@ -144,14 +143,14 @@
                                  <div class="chart-background">
                                     <bar-chart :data="power.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                                  </div>
-                                 <v-card-title primary class="title">Power
+                                 <v-card-title primary class="title">{{$t("message.power")}}
                                     <v-spacer></v-spacer>
                                     <v-icon>fa-chart-bar</v-icon>
                                  </v-card-title>
                                  <v-card-text>
-                                    <span class="title">Consumption: </span>
-                                    <span class="headline">{{ get_randomized_value(power.value) }}GWh</span><br>
-                                    <span class="title">Incidents: </span>
+                                    <span class="title">{{$t("message.consumption")}}: </span>
+                                    <span class="headline">{{ get_randomized_value(power.value) }} {{$t("message.gigawatt_per_hour")}}</span><br>
+                                    <span class="title">{{$t("message.incidents")}}: </span>
                                     <span class="headline">{{ power.incidents }}</span>
                                  </v-card-text>
                               </v-card>
