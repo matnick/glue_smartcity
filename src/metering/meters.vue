@@ -14,7 +14,7 @@
                         <v-layout row wrap>
                            <v-flex v-for="(d,i) in L" d-flex md4>
                               <div v-bind:class="[d.c,'singlestat']">
-                                 <div>Power L{{i+1}}</div>
+                                 <div>{{$t("message.power")}} L{{i+1}}</div>
                                  <div class="value">{{d.value | power}}</div>
                               </div>
                            </v-flex>
@@ -38,7 +38,7 @@
             <v-layout fix-layout row wrap>
                <v-flex d-flex md4>
                   <div class="gauge">
-                     <div>Imbalance</div>
+                     <div>{{$t("message.imbalance")}}</div>
                      <donut-chart :data="L"></donut-chart>
                   </div>
                </v-flex>

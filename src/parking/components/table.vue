@@ -39,19 +39,15 @@
 <script>
 import Vue from "vue";
 import detail from "./detail.vue";
+import Vue_i18n from 'vue-i18n';
+Vue.use(Vue_i18n);
 
 export default {
   components: {
     detail
   },
   data: () => ({
-    pagination: { rowsPerPage: 12 },
-    table_headers: [
-      { text: "Name", value: "name" },
-      { text: "Free", value: "free" },
-      { text: "Places", value: "places" },
-      { text: "Info", value: "info" }
-    ]
+    pagination: { rowsPerPage: 12 }
   }),
   props: ["data"],
   computed: {
@@ -61,6 +57,14 @@ export default {
       }
 
       return Math.ceil(this.pagination.totalItems / this.pagination.rowsPerPage);
+    },
+    table_headers () {
+        return [
+            { text: this.$i18n.t("message.name"), value: "name" },
+            { text: this.$i18n.t("message.free"), value: "free" },
+            { text: this.$i18n.t("message.places"), value: "places" },
+            { text: this.$i18n.t("message.info"), value: "info" }
+        ]
     }
   },
   methods: {

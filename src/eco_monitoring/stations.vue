@@ -34,10 +34,10 @@
 
 <script>
 import Vue from "vue";
-
+import Vue_i18n from 'vue-i18n';
 import Axios from "axios";
 import VueAxios from "vue-axios";
-Vue.use(VueAxios, Axios);
+Vue.use(Vue_i18n, VueAxios, Axios);
 
 export default {
   mounted: function() {
@@ -77,35 +77,39 @@ export default {
   data: () => ({
     pagination: { rowsPerPage: 25 },
 
-    station_table: [],
-    headers: [
-      {
-        text: "Name",
-        value: "name",
-        align: "left"
-      },
-      {
-        text: "AQI",
-        value: "aqi",
-        align: "center"
-      },
-      {
-        text: "Type",
-        value: "type",
-        align: "center"
-      },
-      {
-        text: "Status",
-        value: "status",
-        align: "center"
-      },
-      {
-        text: "Coordinates",
-        value: "lat",
-        align: "center"
+    station_table: []
+  }),
+  computed: {
+      headers () {
+          return [
+              {
+                  text: this.$i18n.t("message.name"),
+                  value: "name",
+                  align: "left"
+              },
+              {
+                  text: this.$i18n.t("message.aqi"),
+                  value: "aqi",
+                  align: "center"
+              },
+              {
+                  text: this.$i18n.t("message.type"),
+                  value: "type",
+                  align: "center"
+              },
+              {
+                  text: this.$i18n.t("message.stations"),
+                  value: "status",
+                  align: "center"
+              },
+              {
+                  text: this.$i18n.t("message.coordinates"),
+                  value: "lat",
+                  align: "center"
+              }
+          ]
       }
-    ]
-  })
+  }
 };
 </script>
 

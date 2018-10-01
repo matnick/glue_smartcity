@@ -40,6 +40,9 @@
 
 <script>
 import Vue from "vue";
+import Vue_i18n from 'vue-i18n';
+Vue.use(Vue_i18n);
+
 import bindetails from "./bindetails.vue";
 Vue.component("bindetails", bindetails);
 
@@ -47,16 +50,18 @@ export default {
   data: () => ({
     smartbins: [],
     pagination: { rowsPerPage: 14 },
-    table_headers: [
-      { text: "Name", value: "name" },
-      { text: "Level", value: "level" },
-      { text: "Status", value: "status" },
-      { text: "Vendor", value: "vendor" },
-      { text: "Info", value: "info" }
-    ]
   }),
   props: ["bins"],
   computed: {
+    table_headers () {
+      return [
+            { text: this.$i18n.t("message.name"), value: "name" },
+            { text: this.$i18n.t("message.level"), value: "level" },
+            { text: this.$i18n.t("message.status"), value: "status" },
+            { text: this.$i18n.t("message.vendor"), value: "vendor" },
+            { text: this.$i18n.t("message.info"), value: "info" }
+        ]
+    },
     pages() {
       if (
         this.pagination.rowsPerPage == null ||
