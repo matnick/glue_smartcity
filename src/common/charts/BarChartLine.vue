@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Vue from "Vue";
+import Vue from "vue";
 import Vue_i18n from 'vue-i18n';
 Vue.use(Vue_i18n);
 
