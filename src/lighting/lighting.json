@@ -1,0 +1,162 @@
+[
+   {
+      "coordinates": {
+         "lat": "55.696623",
+         "lng": "37.356674"
+      },
+      "name": "Фонарь #23",
+      "type": "light",
+      "status": "active",
+      "consumption": 100,
+      "temperature": 27,
+      "brightness": 100,
+      "service_time": 90,
+      "uptime": 2334,
+      "status_description": "Замена лампы - осталось 4 дня",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.696342",
+         "lng": "37.359745"
+      },
+      "name": "Фонарь #65",
+      "type": "light",
+      "status": "active",
+      "consumption": 100,
+      "temperature": 27,
+      "brightness": 100,
+      "service_time": 290,
+      "uptime": 1334,
+      "status_description": "",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.699384",
+         "lng": "37.366796"
+      },
+      "name": "Фонарь #82",
+      "type": "light",
+      "status": "inactive",
+      "consumption": 0,
+      "temperature": 22,
+      "brightness": 0,
+      "service_time": 320,
+      "uptime": 2534,
+      "status_description": "Выключен по расписанию",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.70835",
+         "lng": "37.374306"
+      },
+      "name": "Фонарь #12",
+      "type": "light",
+      "status": "failure",
+      "consumption": 0,
+      "temperature": 21,
+      "brightness": 0,
+      "service_time": 0,
+      "uptime": 1281,
+      "status_description": "Поломка - лампа",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.683824",
+         "lng": "37.335218"
+      },
+      "name": "Фонарь #45",
+      "type": "light",
+      "status": "active",
+      "consumption": 100,
+      "temperature": 27,
+      "brightness": 100,
+      "service_time": 137,
+      "uptime": 4863,
+      "status_description": "Срок наработки фонаря истекает через 7 дней",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.680333",
+         "lng": "37.345947"
+      },
+      "name": "Фонарь #88",
+      "type": "light",
+      "status": "active",
+      "consumption": 100,
+      "temperature": 27,
+      "brightness": 100,
+      "service_time": 240,
+      "uptime": 1212,
+      "status_description": "",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.694659",
+         "lng": "37.3438"
+      },
+      "name": "Фонарь #92",
+      "type": "light",
+      "status": "inactive",
+      "consumption": 0,
+      "temperature": 22,
+      "brightness": 0,
+      "service_time": 250,
+      "uptime": 1245,
+      "status_description": "Выключен по расписанию",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.685413",
+         "lng": "37.353031"
+      },
+      "name": "Фонарь #10",
+      "type": "light",
+      "status": "active",
+      "consumption": 100,
+      "temperature": 22,
+      "brightness": 100,
+      "service_time": 300,
+      "uptime": 2125,
+      "status_description": "",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.671114",
+         "lng": "37.34173"
+      },
+      "name": "Фонарь #26",
+      "type": "light",
+      "status": "active",
+      "consumption": 100,
+      "temperature": 22,
+      "brightness": 100,
+      "service_time": 300,
+      "uptime": 1885,
+      "status_description": "",
+      "selected": false
+   },
+   {
+      "coordinates": {
+         "lat": "55.672224",
+         "lng": "37.34913"
+      },
+      "name": "Фонарь #27",
+      "type": "light",
+      "status": "active",
+      "consumption": 100,
+      "temperature": 22,
+      "brightness": 100,
+      "service_time": 65,
+      "uptime": 1342,
+      "status_description": "Замена лампы - осталось 3 дня",
+      "selected": false
+   }
+]

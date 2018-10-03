@@ -172,12 +172,12 @@ export default {
                 icon: "fa-lightbulb",
                 alticon: "fa-lightbulb",
                 children: [
-                    /* {
+                     {
                       icon: "fa-sliders-h",
                       path: "/lighting/main",
                       text: "Main"
                     },
-                    {
+                   /* {
                       icon: "fa-chart-line",
                       path: "/lighting/energy_management",
                       text: "Management"

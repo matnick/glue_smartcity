@@ -55,6 +55,7 @@
       "build_route": "build route",
       "clear_route": "clear",
       "minutes_short": "min",
+      "watt": "W",
       "kilowatt": "kW",
       "gigawatt_per_hour": "gWh",
       "meters_cubic": "m³",
@@ -68,7 +69,24 @@
       "system": "System",
       "utilization_level": "Utilization level",
       "battery_level": "Battery level",
-      "location": "Location"
+      "location": "Location",
+      "events": "Events",
+      "lighting_efficiency": "Lighting efficiency value, RUB/m²",
+      "lighting_status": "Lighting system status",
+      "active_lights": "Active",
+      "inactive_lights": "Inactive",
+      "city_average_level": "City average level",
+      "failure_lights": "Failure",
+      "light_uptime" : "Uptime",
+      "short_hours" : "hrs.",
+      "next_service_due" : "Next service due",
+      "current_consumption" : "Current consumption",
+      "brightness": "Brightness",
+      "on": "ON",
+      "off": "OFF",
+      "temperature": "Temperature",
+      "lamp_on": "Online",
+      "lamp_off": "Offline"
     }
   },
   "ru": {
@@ -127,6 +145,7 @@
       "build_route": "построить маршрут",
       "clear_route": "очистить",
       "minutes_short": "мин",
+      "watt": "Вт",
       "kilowatt": "кВт",
       "gigawatt_per_hour": "гВч",
       "meters_cubic": "м³",
@@ -140,7 +159,24 @@
       "system": "Система",
       "utilization_level": "Уровень заполнения",
       "battery_level": "Заряд баттареи",
-      "location": "Координаты"
+      "location": "Координаты",
+      "events": "События",
+      "lighting_efficiency": "Показатель эффективности освещения, руб/м²",
+      "lighting_status": "Состояние системы освещения",
+      "active_lights": "Включено",
+      "inactive_lights": "Выключено",
+      "city_average_level": "Средний уровень по городу",
+      "failure_lights": "Поломка",
+      "light_uptime" : "Время наработки",
+      "short_hours" : "ч.",
+      "next_service_due" : "Время до следующего обслуживания",
+      "current_consumption" : "Текущее потребление",
+      "brightness": "Яркость",
+      "on": "Включить",
+      "off": "Выключить",
+      "temperature": "Температура",
+      "lamp_on": "Включен",
+      "lamp_off": "Выключен"
     }
   }
 }
