@@ -1,6 +1,5 @@
 <template>
    <div>
-      <detail ref="parkingTable"></detail>
       <v-layout fix-layout column class="table-column">
          <v-flex d-inline-flex class="flex-full-height">
             <v-card class="no-shadow">

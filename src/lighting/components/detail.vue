@@ -55,7 +55,9 @@ export default {
   },
   data: () => ({
     visible: false,
-    values: {}
+    values: {
+        coordinates: {}
+    }
   }),
   methods: {
     show(item) {
