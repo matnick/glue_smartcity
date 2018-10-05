@@ -21,6 +21,9 @@ import safety_video_analitics from './safety/video-analitics.vue'
 import metering_gascloud from './metering/gascloud.vue'
 import metering_linergo from './metering/linergo.vue'
 import metering_meters from './metering/meters.vue'
+import metering_company from './metering/company.vue'
+import metering_personal from './metering/personal.vue'
+
 
 import infras_incidents from './infrastructure/incidents_new.vue'
 import infras_stat from './infrastructure/energy_management.vue'
@@ -133,6 +136,12 @@ const router = new VueRouter({
    }, {
       path: '/metering/meters',
       component: metering_meters
+   }, {
+      path: '/metering/company',
+      component: metering_company
+   }, {
+      path: '/metering/personal',
+      component: metering_personal
    }, {
       path: '/infrastructure/incidents',
       component: infras_incidents

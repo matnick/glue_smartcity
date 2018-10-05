@@ -219,6 +219,16 @@ export default {
                 alticon: "fa-chart-bar",
                 children: [
                     {
+                        icon: "fa-sliders-h",
+                        path: "/metering/company",
+                        text: this.$i18n.t("message.management_company_page")
+                    },
+                    {
+                        icon: "fa-user",
+                        path: "/metering/personal",
+                        text: this.$i18n.t("message.personal_account")
+                    },
+                    {
                         icon: "fa-compress",
                         path: "/metering/meters",
                         text: this.$i18n.t("message.meters")
