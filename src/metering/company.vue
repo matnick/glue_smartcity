@@ -48,7 +48,7 @@
                <v-flex d-flex md4>
                   <v-layout fix-layout row wrap>
                      <v-flex d-flex md12>
-                        <v-card to="/parking/stat">
+                        <v-card>
                            <div class="chart-background">
                               <bar-chart :data="active_item.measurements.cold_water.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                            </div>
@@ -64,7 +64,7 @@
                <v-flex d-flex md4>
                   <v-layout row wrap>
                      <v-flex d-flex md12>
-                        <v-card to="/parking/stat">
+                        <v-card>
                            <div class="chart-background">
                               <bar-chart :data="active_item.measurements.hot_water.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                            </div>
@@ -80,7 +80,7 @@
                <v-flex d-flex md4>
                   <v-layout row wrap>
                      <v-flex d-flex md12>
-                        <v-card to="/parking/stat">
+                        <v-card>
                            <div class="chart-background">
                               <bar-chart :data="active_item.measurements.energy.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                            </div>
@@ -100,7 +100,7 @@
                <v-flex d-flex md4>
                   <v-layout row wrap>
                      <v-flex d-flex md12>
-                        <v-card to="/parking/stat">
+                        <v-card>
                            <div class="chart-background">
                               <bar-chart :data="active_item.measurements.energy.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                            </div>
