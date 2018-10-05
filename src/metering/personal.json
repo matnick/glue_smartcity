@@ -1,0 +1,66 @@
+{
+  "name": "Иванов Петр Сергеевич",
+  "address": "ул. Кременчугская, д.32, кв. 105",
+  "payment_total_this_month": "3000",
+  "payment_total_last_month": "2300",
+  "payment_house_average": "2700",
+
+  "measurements": {
+    "cold_water": {
+      "total": 12483,
+      "this_month": 100,
+      "sum": 500,
+      "chartData" : [
+        { "title": "апрель", "value": 80 },
+        { "title": "май", "value": 70 },
+        { "title": "июнь", "value": 95 },
+        { "title": "июль", "value": 110 },
+        { "title": "август", "value": 80 },
+        { "title": "сентябрь", "value": 50 },
+        { "title": "октябрь", "value": 100 }
+      ]
+    },
+    "hot_water": {
+      "total": 6930,
+      "this_month": 30,
+      "sum": 600,
+      "chartData" : [
+        { "title": "апрель", "value": 24 },
+        { "title": "май", "value": 22 },
+        { "title": "июнь", "value": 21 },
+        { "title": "июль", "value": 21 },
+        { "title": "август", "value": 22 },
+        { "title": "сентябрь", "value": 24 },
+        { "title": "октябрь", "value": 30 }
+      ]
+    },
+    "energy": {
+      "total": 4324,
+      "this_month": 332,
+      "sum": 1000,
+      "chartData" : [
+        { "title": "апрель", "value": 141 },
+        { "title": "май", "value": 222 },
+        { "title": "июнь", "value": 331 },
+        { "title": "июль", "value": 115 },
+        { "title": "август", "value": 321 },
+        { "title": "сентябрь", "value": 248 },
+        { "title": "октябрь", "value": 332 }
+      ]
+    },
+    "gas": {
+      "total": 1424,
+      "this_month": 143,
+      "sum": 900,
+      "chartData" : [
+        { "title": "апрель", "value": 134 },
+        { "title": "май", "value": 125 },
+        { "title": "июнь", "value": 107 },
+        { "title": "июль", "value": 111 },
+        { "title": "август", "value": 120 },
+        { "title": "сентябрь", "value": 25 },
+        { "title": "октябрь", "value": 143 }
+      ]
+    }
+  }
+}

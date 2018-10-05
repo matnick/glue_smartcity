@@ -1,0 +1,767 @@
+[
+   {
+      "polygone_coordinates":
+         [
+            [
+               55.730407,
+               37.4215101
+
+            ],
+            [
+               55.7303967,
+               37.4234247
+
+            ],
+            [
+               55.7297382,
+               37.4234194
+
+            ],
+            [
+               55.7297352,
+               37.4232155
+
+            ],
+            [
+               55.7302819,
+               37.4232155
+
+            ],
+            [
+               55.7303,
+               37.4214935
+
+            ],
+            [
+               55.730407,
+               37.4215101
+
+            ]
+         ]
+      ,
+      "house_number": "1",
+      "street_name": "Кунцевская улица",
+      "information": {
+         "construction_date": "1986",
+         "total_appartments": "120",
+         "concierge_phone": "+7 926 223-31-15",
+         "total_entrances": "4"
+      },
+      "announcements": {
+         "header": "ВНИМАНИЕ! Утечка газа!",
+         "message": "Срочно звоните консьержу. Требуется эвакуация!"
+      },
+      "selected": false,
+      "address": "ул. Кунцевская д. 1",
+      "measurements": {
+         "cold_water": {
+            "total": 12483,
+            "counters": 12483,
+            "chartData" : [
+               { "title": "5 июля", "value": 40 },
+               { "title": "6 июля", "value": 20 },
+               { "title": "7 июля", "value": 10 },
+               { "title": "8 июля", "value": 10 },
+               { "title": "9 июля", "value": 20 },
+               { "title": "10 июля", "value": 40 },
+               { "title": "11 июля", "value": 30 }
+            ]
+         },
+         "hot_water": {
+            "total": 6930,
+            "counters": 5930,
+            "chartData" : [
+               { "title": "5 июля", "value": 40 },
+               { "title": "6 июля", "value": 20 },
+               { "title": "7 июля", "value": 40 },
+               { "title": "8 июля", "value": 10 },
+               { "title": "9 июля", "value": 20 },
+               { "title": "10 июля", "value": 40 },
+               { "title": "11 июля", "value": 30 }
+            ]
+         },
+         "energy": {
+            "total": 4324,
+            "counters": 4332,
+            "chartData" : [
+               { "title": "5 июля", "value": 40 },
+               { "title": "6 июля", "value": 20 },
+               { "title": "7 июля", "value": 40 },
+               { "title": "8 июля", "value": 10 },
+               { "title": "9 июля", "value": 20 },
+               { "title": "10 июля", "value": 40 },
+               { "title": "11 июля", "value": 30 }
+            ]
+         },
+         "gas": {
+            "total": 14324,
+            "counters": 4332,
+            "chartData" : [
+               { "title": "5 июля", "value": 40 },
+               { "title": "6 июля", "value": 20 },
+               { "title": "7 июля", "value": 40 },
+               { "title": "8 июля", "value": 10 },
+               { "title": "9 июля", "value": 20 },
+               { "title": "10 июля", "value": 30 },
+               { "title": "11 июля", "value": 10 }
+            ]
+         }
+      },
+      "events": [
+         "Заявка из квартиры 223: не работает розетка",
+         "Превышение разницы температур: перетоп",
+         "Плановая проверка счетичка в квартире 132"
+      ]
+
+   },
+   {
+      "polygone_coordinates": [
+         [
+            55.7312364,
+            37.4215257
+
+         ],
+         [
+            55.7311307,
+            37.4214935
+
+         ],
+         [
+            55.7311095,
+            37.4231726
+
+         ],
+         [
+            55.7311669,
+            37.4231833
+
+         ],
+         [
+            55.7311609,
+            37.4233711
+
+         ],
+         [
+            55.731771,
+            37.423414
+
+         ],
+         [
+            55.7317741,
+            37.4232155
+
+         ],
+         [
+            55.7312243,
+            37.4231619
+
+         ],
+         [
+            55.7312364,
+            37.4215257
+
+         ]
+      ],
+      "house_number": "2",
+      "street_name": "Кунцевская улица",
+      "information": {
+         "construction_date": "1993",
+         "total_appartments": "220",
+         "concierge_phone": "+7 926 213-34-13",
+         "total_entrances": "2"
+      },
+      "announcements": {
+      },
+      "selected": false,
+      "address": "ул. Кунцевская д. 2",
+      "measurements": {
+         "cold_water": {
+            "total": 22483,
+            "counters": 22483,
+            "chartData" : [
+               { "title": "5 июля", "value": 60 },
+               { "title": "6 июля", "value": 70 },
+               { "title": "7 июля", "value": 20 },
+               { "title": "8 июля", "value": 30 },
+               { "title": "9 июля", "value": 80 },
+               { "title": "10 июля", "value": 20 },
+               { "title": "11 июля", "value": 50 }
+            ]
+         },
+         "hot_water": {
+            "total": 5421,
+            "counters": 5421,
+            "chartData" : [
+               { "title": "5 июля", "value": 30 },
+               { "title": "6 июля", "value": 50 },
+               { "title": "7 июля", "value": 60 },
+               { "title": "8 июля", "value": 80 },
+               { "title": "9 июля", "value": 20 },
+               { "title": "10 июля", "value": 30 },
+               { "title": "11 июля", "value": 70 }
+            ]
+         },
+         "energy": {
+            "total": 5566,
+            "counters": 4332,
+            "chartData" : [
+               { "title": "5 июля", "value": 40 },
+               { "title": "6 июля", "value": 30 },
+               { "title": "7 июля", "value": 50},
+               { "title": "8 июля", "value": 60 },
+               { "title": "9 июля", "value": 70 },
+               { "title": "10 июля", "value": 20 },
+               { "title": "11 июля", "value": 40 }
+            ]
+         },
+         "gas": {
+            "total": 1231,
+            "counters": 1231,
+            "chartData" : [
+               { "title": "5 июля", "value": 40 },
+               { "title": "6 июля", "value": 50 },
+               { "title": "7 июля", "value": 70 },
+               { "title": "8 июля", "value": 80 },
+               { "title": "9 июля", "value": 20 },
+               { "title": "10 июля", "value": 30 },
+               { "title": "11 июля", "value": 10 }
+            ]
+         }
+      },
+      "events": [
+         "Превышение разницы температур: перетоп",
+         "Заявка из квартиры 123: не работает кондиционер",
+         "Плановая проверка пожарной сигнализации в квартире 231"
+      ]
+   },
+   {
+      "polygone_coordinates": [
+         [
+            55.730155,
+            37.4176848
+
+         ],
+         [
+            55.7303,
+            37.4176848
+
+         ],
+         [
+            55.7303181,
+            37.417953
+
+         ],
+         [
+            55.7304329,
+            37.4179852
+
+         ],
+         [
+            55.730439,
+            37.4191439
+
+         ],
+         [
+            55.7303242,
+            37.4191546
+
+         ],
+         [
+            55.7303,
+            37.4181032
+
+         ],
+         [
+            55.7301309,
+            37.4180603
+
+         ],
+         [
+            55.730155,
+            37.4176848
+
+         ]
+      ],
+      "house_number": "11",
+      "street_name": "Кунцевская улица",
+      "information": {
+         "construction_date": "1977",
+         "total_appartments": "238",
+         "concierge_phone": "+7 916 221-35-45",
+         "total_entrances": "6"
+      },
+      "announcements": {
+      },
+      "selected": false,
+      "address": "ул. Кунцевская д. 11",
+      "measurements": {
+         "cold_water": {
+            "total": 4213,
+            "counters": 4213,
+            "chartData" : [
+               { "title": "5 июля", "value": 50 },
+               { "title": "6 июля", "value": 30 },
+               { "title": "7 июля", "value": 20 },
+               { "title": "8 июля", "value": 70 },
+               { "title": "9 июля", "value": 80 },
+               { "title": "10 июля", "value": 20 },
+               { "title": "11 июля", "value": 10 }
+            ]
+         },
+         "hot_water": {
+            "total": 3213,
+            "counters": 3213,
+            "chartData" : [
+               { "title": "5 июля", "value": 40 },
+               { "title": "6 июля", "value": 30 },
+               { "title": "7 июля", "value": 70 },
+               { "title": "8 июля", "value": 50 },
+               { "title": "9 июля", "value": 30 },
+               { "title": "10 июля", "value": 10 },
+               { "title": "11 июля", "value": 80 }
+            ]
+         },
+         "energy": {
+            "total": 53235,
+            "counters": 53235,
+            "chartData" : [
+               { "title": "5 июля", "value": 90 },
+               { "title": "6 июля", "value": 30 },
+               { "title": "7 июля", "value": 20 },
+               { "title": "8 июля", "value": 60 },
+               { "title": "9 июля", "value": 10 },
+               { "title": "10 июля", "value": 70 },
+               { "title": "11 июля", "value": 20 }
+            ]
+         },
+         "gas": {
+            "total": 4324,
+            "counters": 3200,
+            "chartData" : [
+               { "title": "5 июля", "value": 20 },
+               { "title": "6 июля", "value": 20 },
+               { "title": "7 июля", "value": 60 },
+               { "title": "8 июля", "value": 80 },
+               { "title": "9 июля", "value": 20 },
+               { "title": "10 июля", "value": 40 },
+               { "title": "11 июля", "value": 10 }
+            ]
+         }
+      },
+      "events": [
+         "Плановая проверка систем водоснабжения на 12 этаже",
+         "Заявка из квартиры 223: мусоропровод засорен",
+         "Превышение разницы температур: перетоп"
+      ]
+   },
+   {
+      "polygone_coordinates": [
+         [
+            55.7318224,
+            37.4185109
+
+         ],
+         [
+            55.7312847,
+            37.4184895
+
+         ],
+         [
+            55.7312243,
+            37.4186504
+
+         ],
+         [
+            55.7311458,
+            37.4188435
+
+         ],
+         [
+            55.7311277,
+            37.4202383
+
+         ],
+         [
+            55.7312666,
+            37.4205065
+
+         ],
+         [
+            55.7317137,
+            37.4205494
+
+         ],
+         [
+            55.7317257,
+            37.4210429
+
+         ],
+         [
+            55.7318949,
+            37.4210429
+
+         ],
+         [
+            55.7318768,
+            37.4202704
+
+         ],
+         [
+            55.7313633,
+            37.4202061
+
+         ],
+         [
+            55.7313089,
+            37.4199486
+
+         ],
+         [
+            55.731321,
+            37.4193692
+
+         ],
+         [
+            55.7313089,
+            37.4188113
+
+         ],
+         [
+            55.7317982,
+            37.4188435
+
+         ],
+         [
+            55.7318647,
+            37.4186826
+
+         ],
+         [
+            55.7318224,
+            37.4185109
+
+         ]
+      ],
+      "house_number": "4",
+      "street_name": "Кунцевская улица",
+      "information": {
+         "construction_date": "1978",
+         "total_appartments": "238",
+         "concierge_phone": "+7 903 114-33-15",
+         "total_entrances": "6"
+      },
+      "announcements": {
+      },
+      "selected": false,
+      "address": "ул. Кунцевская д. 4",
+      "measurements": {
+         "cold_water": {
+            "total": 31231,
+            "counters": 31231,
+            "chartData" : [
+               { "title": "5 июля", "value": 20 },
+               { "title": "6 июля", "value": 50 },
+               { "title": "7 июля", "value": 70 },
+               { "title": "8 июля", "value": 20 },
+               { "title": "9 июля", "value": 40 },
+               { "title": "10 июля", "value": 30 },
+               { "title": "11 июля", "value": 30 }
+            ]
+         },
+         "hot_water": {
+            "total": 5112,
+            "counters": 5112,
+            "chartData" : [
+               { "title": "5 июля", "value": 50 },
+               { "title": "6 июля", "value": 30 },
+               { "title": "7 июля", "value": 40 },
+               { "title": "8 июля", "value": 20 },
+               { "title": "9 июля", "value": 30 },
+               { "title": "10 июля", "value": 60 },
+               { "title": "11 июля", "value": 10 }
+            ]
+         },
+         "energy": {
+            "total": 7122,
+            "counters": 7122,
+            "chartData" : [
+               { "title": "5 июля", "value": 30 },
+               { "title": "6 июля", "value": 40 },
+               { "title": "7 июля", "value": 20 },
+               { "title": "8 июля", "value": 60 },
+               { "title": "9 июля", "value": 30 },
+               { "title": "10 июля", "value": 50 },
+               { "title": "11 июля", "value": 10 }
+            ]
+         },
+         "gas": {
+            "total": 4324,
+            "counters": 4332,
+            "chartData" : [
+               { "title": "5 июля", "value": 70 },
+               { "title": "6 июля", "value": 30 },
+               { "title": "7 июля", "value": 50 },
+               { "title": "8 июля", "value": 30 },
+               { "title": "9 июля", "value": 20 },
+               { "title": "10 июля", "value": 60 },
+               { "title": "11 июля", "value": 10 }
+            ]
+         }
+      },
+      "events": [
+         "Заявка из квартиры 223: водоотвод засорен",
+         "Превышение разницы температур: перетоп",
+         "Проверить отсутствие захлмленности на 15 этаже"
+      ]
+   },
+   {
+      "polygone_coordinates": [
+         [
+            55.7317137,
+            37.4142194
+
+         ],
+         [
+            55.7310793,
+            37.4142301
+
+         ],
+         [
+            55.7310733,
+            37.416569
+
+         ],
+         [
+            55.7317076,
+            37.4165905
+
+         ],
+         [
+            55.7317076,
+            37.4163222
+
+         ],
+         [
+            55.7312364,
+            37.4163115
+
+         ],
+         [
+            55.7312243,
+            37.4144661
+
+         ],
+         [
+            55.7317076,
+            37.4144554
+
+         ],
+         [
+            55.7317257,
+            37.4142194
+
+         ],
+         [
+            55.7317137,
+            37.4142194
+
+         ]
+      ],
+      "house_number": "8",
+      "street_name": "Кунцевская улица",
+      "information": {
+         "construction_date": "1986",
+         "total_appartments": "115",
+         "concierge_phone": "+7 927 885-31-15",
+         "total_entrances": "3"
+      },
+      "announcements": {
+      },
+      "selected": false,
+      "address": "ул. Кунцевская д. 8",
+      "measurements": {
+         "cold_water": {
+            "total": 12512,
+            "counters": 12512,
+            "chartData" : [
+               { "title": "5 июля", "value": 30 },
+               { "title": "6 июля", "value": 20 },
+               { "title": "7 июля", "value": 50 },
+               { "title": "8 июля", "value": 30 },
+               { "title": "9 июля", "value": 70 },
+               { "title": "10 июля", "value": 60 },
+               { "title": "11 июля", "value": 20 }
+            ]
+         },
+         "hot_water": {
+            "total": 7130,
+            "counters": 5230,
+            "chartData" : [
+               { "title": "5 июля", "value": 40 },
+               { "title": "6 июля", "value": 30 },
+               { "title": "7 июля", "value": 60 },
+               { "title": "8 июля", "value": 70 },
+               { "title": "9 июля", "value": 30 },
+               { "title": "10 июля", "value": 10 },
+               { "title": "11 июля", "value": 80 }
+            ]
+         },
+         "energy": {
+            "total": 4324,
+            "counters": 4332,
+            "chartData" : [
+               { "title": "5 июля", "value": 60 },
+               { "title": "6 июля", "value": 30 },
+               { "title": "7 июля", "value": 40 },
+               { "title": "8 июля", "value": 20 },
+               { "title": "9 июля", "value": 30 },
+               { "title": "10 июля", "value": 50 },
+               { "title": "11 июля", "value": 20 }
+            ]
+         },
+         "gas": {
+            "total": 4324,
+            "counters": 4332,
+            "chartData" : [
+               { "title": "5 июля", "value": 30 },
+               { "title": "6 июля", "value": 40 },
+               { "title": "7 июля", "value": 40 },
+               { "title": "8 июля", "value": 20 },
+               { "title": "9 июля", "value": 30 },
+               { "title": "10 июля", "value": 70 },
+               { "title": "11 июля", "value": 30 }
+            ]
+         }
+      },
+      "events": [
+         "Плановая проверка счетичка в квартире 321",
+         "Заявка из квартиры 112: не работает розетка",
+         "Превышение разницы температур: перетоп"
+      ]
+   },
+   {
+      "polygone_coordinates": [
+         [
+            55.7311397,
+            37.4132967
+         ],
+         [
+            55.7311397,
+            37.4133182
+
+         ],
+         [
+            55.7313693,
+            37.413286
+         ],
+         [
+            55.7313995,
+            37.4126101
+         ],
+         [
+            55.731611,
+            37.4126637
+         ],
+         [
+            55.7316351,
+            37.4135864
+         ],
+         [
+            55.731762,
+            37.4135756
+         ],
+         [
+            55.7317559,
+            37.4125886
+
+         ],
+         [
+            55.7316291,
+            37.4123955
+         ],
+         [
+            55.7313633,
+            37.4123096
+         ],
+         [
+            55.7311277,
+            37.4123204
+         ],
+         [
+            55.7311397,
+            37.4132967
+         ]
+      ],
+      "house_number": "10",
+      "street_name": "Кунцевская улица",
+      "information": {
+         "construction_date": "1971",
+         "total_appartments": "231",
+         "concierge_phone": "+7 927-32-13",
+         "total_entrances": "5"
+      },
+      "announcements": {
+      },
+      "selected": false,
+      "address": "ул. Кунцевская д. 10",
+      "measurements": {
+         "cold_water": {
+            "total": 6930,
+            "counters": 6930,
+            "chartData" : [
+               { "title": "5 июля", "value": 32 },
+               { "title": "6 июля", "value": 61 },
+               { "title": "7 июля", "value": 32 },
+               { "title": "8 июля", "value": 45 },
+               { "title": "9 июля", "value": 43 },
+               { "title": "10 июля", "value": 32 },
+               { "title": "11 июля", "value": 17 }
+            ]
+         },
+         "hot_water": {
+            "total": 1231,
+            "counters": 1231,
+            "chartData" : [
+               { "title": "5 июля", "value": 55 },
+               { "title": "6 июля", "value": 32 },
+               { "title": "7 июля", "value": 43 },
+               { "title": "8 июля", "value": 32 },
+               { "title": "9 июля", "value": 65 },
+               { "title": "10 июля", "value": 43 },
+               { "title": "11 июля", "value": 32 }
+            ]
+         },
+         "energy": {
+            "total": 3123,
+            "counters": 3123,
+            "chartData" : [
+               { "title": "5 июля", "value": 23 },
+               { "title": "6 июля", "value": 52 },
+               { "title": "7 июля", "value": 32 },
+               { "title": "8 июля", "value": 53 },
+               { "title": "9 июля", "value": 21 },
+               { "title": "10 июля", "value": 43 },
+               { "title": "11 июля", "value": 54 }
+            ]
+         },
+         "gas": {
+            "total": 7531,
+            "counters": 7531,
+            "chartData" : [
+               { "title": "5 июля", "value": 65 },
+               { "title": "6 июля", "value": 34 },
+               { "title": "7 июля", "value": 54 },
+               { "title": "8 июля", "value": 32 },
+               { "title": "9 июля", "value": 32 },
+               { "title": "10 июля", "value": 43 },
+               { "title": "11 июля", "value": 32 }
+            ]
+         }
+      },
+      "events": [
+         "Консьерж: захламлены выходы на 12 этаже",
+         "Превышение нормы C02 на лестничных клетках",
+         "Квартира 223: посторонний запах из вентиляции"
+      ]
+   }
+]
