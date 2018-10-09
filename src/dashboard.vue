@@ -15,7 +15,7 @@
                   </v-card>
                </v-flex>
                <v-flex d-flex md3>
-                  <v-card :color="parking.color" to="/parking/stat">
+                  <v-card :color="parking.color" to="/parking/map">
                      <div class="chart-background">
                         <bar-chart :data="parking.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                      </div>
@@ -32,7 +32,7 @@
                   </v-card>
                </v-flex>
                <v-flex d-flex md3>
-                  <v-card :color="lamps.color" to="/lighting/unilight">
+                  <v-card :color="lamps.color" to="/lighting/main">
                      <div class="chart-background">
                         <bar-chart :data="lamps.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                      </div>
@@ -81,7 +81,7 @@
                            <v-flex class="fix-layout" d-flex md12>
                               <v-layout class="fix-layout" row wrap>
                                  <v-flex d-flex md6>
-                                    <v-card :color="meters.color" to="/metering/meters">
+                                    <v-card :color="meters.color" to="/metering/company">
                                        <div class="chart-background">
                                           <bar-chart :data="meters.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                                        </div>
