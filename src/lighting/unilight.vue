@@ -13,7 +13,7 @@ Vue.use(VueAxios, Axios);
 
 export default {
   data: () => ({
-    src: "http://ng.unilight.su/"
+    src: "https://ng.unilight.su/"
   })
 };
 </script>
