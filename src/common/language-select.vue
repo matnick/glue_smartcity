@@ -1,5 +1,5 @@
 <template>
-    <v-container fluid>
+    <v-container fluid class="invisible">
         <v-layout column wrap align-center>
             <v-flex xs1 sm1 d-flex align-end>
                 <v-select
@@ -18,3 +18,9 @@
         }
     }
 </script>
+
+<style>
+    .invisible {
+        opacity: 0;
+    }
+</style>
