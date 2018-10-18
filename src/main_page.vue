@@ -64,14 +64,14 @@
    <v-toolbar color="primary" dark app fixed clipped-left class="toolbar">
       <v-btn icon @click="toggle_menu"><v-icon>fa-bars</v-icon></v-btn>
       <v-menu>
-         <v-toolbar-title  slot="activator">
-            <img class="mr-3 mt-2" src="./assets/logo_nokia.svg" height="25px" alt="Nokia Logo">
-            {{$t("message.smart_city_control_center")}}
+         <v-toolbar-title class="no-logo-margin"  slot="activator">
+            <!-- <img class="mr-3 mt-2" src="./assets/logo_nokia.svg" height="25px" alt="Nokia Logo"> -->
+            {{$t("message.rostelecom_network_technologies")}}
          </v-toolbar-title>
       </v-menu>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-         <div class="title mt-4" >{{$t("message.powered_by_impact")}}</div>
+         <div class="title mt-4" >{{$t("message.powered_by_nokia")}}</div>
       </v-toolbar-items>
    </v-toolbar>
 
@@ -354,5 +354,8 @@ export default {
 <style>
 .toolbar {
   z-index: 10;
+}
+.no-logo-margin {
+    margin-left:20px;
 }
 </style>

@@ -2,6 +2,8 @@
   "en": {
     "message": {
       "smart_city_control_center": "Smart Cty control center",
+      "rostelecom_network_technologies": "Rostelecom Network Technologies",
+      "powered_by_nokia": "Powered by Nokia",
       "powered_by_impact": "Powered by IMPACT",
       "dashboard": "Dashboard",
       "ecological_monitoring": "Ecological monitoring",
@@ -122,6 +124,8 @@
   "ru": {
     "message": {
       "smart_city_control_center": "Панель управления Smart City",
+      "rostelecom_network_technologies": "Ростелеком Сетевые Технологии",
+      "powered_by_nokia": "Powered by Nokia",
       "powered_by_impact": "Powered by IMPACT",
       "dashboard": "Главная панель",
       "ecological_monitoring": "Экомониторинг",
