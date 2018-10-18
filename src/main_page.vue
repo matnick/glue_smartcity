@@ -145,6 +145,16 @@ export default {
                         icon: "fa-calendar-alt",
                         path: "/eco_monitoring/sityair",
                         text: this.$i18n.t("message.partner")+" #2"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/eco_monitoring/aqi",
+                        text: this.$i18n.t("message.partner")+" #3"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/eco_monitoring/sityair",
+                        text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
             },
@@ -186,6 +196,21 @@ export default {
                         icon: "fa-external-link-square-alt",
                         path: "/lighting/unilight",
                         text: this.$i18n.t("message.partner")+" #1"
+                    },
+                    {
+                        icon: "fa-external-link-square-alt",
+                        path: "/lighting/unilight",
+                        text: this.$i18n.t("message.partner")+" #2"
+                    },
+                    {
+                        icon: "fa-external-link-square-alt",
+                        path: "/lighting/unilight",
+                        text: this.$i18n.t("message.partner")+" #3"
+                    },
+                    {
+                        icon: "fa-external-link-square-alt",
+                        path: "/lighting/unilight",
+                        text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
             },
@@ -242,6 +267,11 @@ export default {
                         icon: "fa-external-link-square-alt",
                         path: "/metering/gascloud",
                         text: this.$i18n.t("message.partner")+" #2"
+                    },
+                    {
+                        icon: "fa-external-link-square-alt",
+                        path: "/metering/linergo",
+                        text: this.$i18n.t("message.partner")+" #3"
                     }
                 ]
             },
@@ -298,6 +328,21 @@ export default {
                         icon: "fa-calendar-alt",
                         path: "/waste/managment",
                         text: this.$i18n.t("message.partner")+" #1"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/waste/managment",
+                        text: this.$i18n.t("message.partner")+" #2"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/waste/managment",
+                        text: this.$i18n.t("message.partner")+" #3"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/waste/managment",
+                        text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
             }
