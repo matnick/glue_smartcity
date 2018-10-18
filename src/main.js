@@ -30,8 +30,8 @@ import infras_stat from './infrastructure/energy_management.vue'
 import infras_monitoring from './infrastructure/monitoring.vue'
 import infras_managment from './infrastructure/managment.vue'
 import infras_gateways from './infrastructure/gateways.vue'
-
-import waste_сontainers from './waste/сontainers.vue'
+waste_containers
+import waste_containers from './waste/containers.vue'
 import waste_planning from './waste/planning.vue'
 import waste_managment from './waste/managment.vue'
 import waste_stat from './waste/stat.vue'
@@ -159,7 +159,7 @@ const router = new VueRouter({
       component: infras_managment
    }, {
       path: '/waste/containers',
-      component: waste_сontainers
+      component: waste_containers
    }, {
       path: '/waste/planning',
       component: waste_planning
