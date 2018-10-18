@@ -64,14 +64,14 @@
    <v-toolbar color="primary" dark app fixed clipped-left class="toolbar">
       <v-btn icon @click="toggle_menu"><v-icon>fa-bars</v-icon></v-btn>
       <v-menu>
-         <v-toolbar-title  slot="activator">
-            <img class="mr-3 mt-2" src="./assets/logo_nokia.svg" height="25px" alt="Nokia Logo">
-            {{$t("message.smart_city_control_center")}}
+         <v-toolbar-title class="no-logo-margin"  slot="activator">
+            <!-- <img class="mr-3 mt-2" src="./assets/logo_nokia.svg" height="25px" alt="Nokia Logo"> -->
+            {{$t("message.rostelecom_network_technologies")}}
          </v-toolbar-title>
       </v-menu>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-         <div class="title mt-4" >{{$t("message.powered_by_impact")}}</div>
+         <div class="title mt-4" >{{$t("message.powered_by_nokia")}}</div>
       </v-toolbar-items>
    </v-toolbar>
 
@@ -145,6 +145,16 @@ export default {
                         icon: "fa-calendar-alt",
                         path: "/eco_monitoring/sityair",
                         text: this.$i18n.t("message.partner")+" #2"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/eco_monitoring/aqi",
+                        text: this.$i18n.t("message.partner")+" #3"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/eco_monitoring/sityair",
+                        text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
             },
@@ -186,6 +196,21 @@ export default {
                         icon: "fa-external-link-square-alt",
                         path: "/lighting/unilight",
                         text: this.$i18n.t("message.partner")+" #1"
+                    },
+                    {
+                        icon: "fa-external-link-square-alt",
+                        path: "/lighting/unilight",
+                        text: this.$i18n.t("message.partner")+" #2"
+                    },
+                    {
+                        icon: "fa-external-link-square-alt",
+                        path: "/lighting/unilight",
+                        text: this.$i18n.t("message.partner")+" #3"
+                    },
+                    {
+                        icon: "fa-external-link-square-alt",
+                        path: "/lighting/unilight",
+                        text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
             },
@@ -242,6 +267,11 @@ export default {
                         icon: "fa-external-link-square-alt",
                         path: "/metering/gascloud",
                         text: this.$i18n.t("message.partner")+" #2"
+                    },
+                    {
+                        icon: "fa-external-link-square-alt",
+                        path: "/metering/linergo",
+                        text: this.$i18n.t("message.partner")+" #3"
                     }
                 ]
             },
@@ -298,6 +328,21 @@ export default {
                         icon: "fa-calendar-alt",
                         path: "/waste/managment",
                         text: this.$i18n.t("message.partner")+" #1"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/waste/managment",
+                        text: this.$i18n.t("message.partner")+" #2"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/waste/managment",
+                        text: this.$i18n.t("message.partner")+" #3"
+                    },
+                    {
+                        icon: "fa-calendar-alt",
+                        path: "/waste/managment",
+                        text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
             }
@@ -309,5 +354,8 @@ export default {
 <style>
 .toolbar {
   z-index: 10;
+}
+.no-logo-margin {
+    margin-left:20px;
 }
 </style>
