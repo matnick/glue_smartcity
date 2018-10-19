@@ -104,9 +104,18 @@ const router = new VueRouter({
       component: eco_monitoring_aqi
    },
    {
+      path: '/eco_monitoring/aqi1',
+      component: eco_monitoring_aqi
+   },
+   {
       path: '/eco_monitoring/sityair',
       component: eco_monitoring_sityair
-   }, {
+   },
+   {
+      path: '/eco_monitoring/sityair1',
+      component: eco_monitoring_sityair
+   },
+   {
       path: '/parking/map',
       component: parking_map
    }, {
@@ -115,10 +124,24 @@ const router = new VueRouter({
    }, {
       path: '/lighting/main',
       component: lighting_main
-   }, {
+   },
+   {
       path: '/lighting/unilight',
       component: lighting_unilight
-   }, {
+   },
+   {
+      path: '/lighting/unilight1',
+      component: lighting_unilight
+   },
+   {
+      path: '/lighting/unilight2',
+      component: lighting_unilight
+   },
+   {
+      path: '/lighting/unilight3',
+      component: lighting_unilight
+   },
+   {
       path: '/safety/acs_lora',
       component: safety_acs_lora
    }, {
@@ -133,7 +156,12 @@ const router = new VueRouter({
    }, {
       path: '/metering/linergo',
       component: metering_linergo
-   }, {
+   },
+   {
+      path: '/metering/linergo1',
+      component: metering_linergo
+   },
+   {
       path: '/metering/meters',
       component: metering_meters
    }, {
@@ -166,10 +194,24 @@ const router = new VueRouter({
    }, {
       path: '/waste/stat',
       component: waste_stat
-   }, {
+   },
+   {
       path: '/waste/managment',
       component: waste_managment
-   }, {
+   },
+   {
+      path: '/waste/managment1',
+      component: waste_managment
+   },
+   {
+      path: '/waste/managment2',
+      component: waste_managment
+   },
+   {
+      path: '/waste/managment3',
+      component: waste_managment
+   },
+   {
       path: '*',
       redirect: '/dashboard'
    }]
