@@ -167,31 +167,31 @@
                         title: moment()
                             .subtract(6, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 40 + 20)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(5, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 40 + 20)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(4, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 40 + 20)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(3, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 40 + 20)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(2, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 40 + 20)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()

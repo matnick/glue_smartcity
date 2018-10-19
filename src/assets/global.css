@@ -105,7 +105,7 @@ table.table thead tr {
 .fill-height {
     height: 100%;
     max-height:100%;
-    padding: 2px 0px 0px;
+    padding: 8px;
 }
 
 .iframe-size {
