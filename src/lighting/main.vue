@@ -209,22 +209,29 @@
 
                 let total_lights = this.lights.length;
 
-                let active_lights = this.lights.filter(function(data){ return data.status === "active" }).length;
-                let inactive_lights = this.lights.filter(function(data){ return data.status === "inactive" }).length;
-                let failure_lights = this.lights.filter(function(data){ return data.status === "failure" }).length;
+                let active_lights = this.lights.filter(function (data) {
+                    return data.status === "active"
+                }).length;
+                let inactive_lights = this.lights.filter(function (data) {
+                    return data.status === "inactive"
+                }).length;
+                let failure_lights = this.lights.filter(function (data) {
+                    return data.status === "failure"
+                }).length;
 
                 return [
                     {
-                        title: this.$i18n.t("message.active_lights") + " (" + active_lights + ") ," + (active_lights/total_lights * 100) + "%",
+                        title: this.$i18n.t("message.active_lights") + " " + (active_lights / total_lights * 100) + "%" + " (" + active_lights + " " + this.$i18n.t("message.pieces_short") + ")",
                         value: active_lights,
                         color: "#039BE5"
                     },
                     {
-                        title: this.$i18n.t("message.inactive_lights") + " (" + inactive_lights + ") ," + (inactive_lights/total_lights * 100) + "%",
+                        title: this.$i18n.t("message.inactive_lights") + " " + (inactive_lights / total_lights * 100) + "%" + " (" + inactive_lights + " " + this.$i18n.t("message.pieces_short") + ")",
                         value: inactive_lights,
-                        color: "#8D6E63" },
+                        color: "#8D6E63"
+                    },
                     {
-                        title: this.$i18n.t("message.failure_lights")+ " (" + failure_lights + ") ," + (failure_lights/total_lights * 100) + "%",
+                        title: this.$i18n.t("message.failure_lights") + " " + (failure_lights / total_lights * 100) + "%" + " (" + failure_lights + " " + this.$i18n.t("message.pieces_short") + ")",
                         value: failure_lights,
                         color: "#FFF"
                     }
