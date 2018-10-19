@@ -91,7 +91,6 @@ import { LMap, LTileLayer, LPolygon, LPopup } from "vue2-leaflet";
 import DonutChart from "./../common/charts/DonutChart";
 import BarChart from "./../common/charts/BarChart";
 
-import parking_data from "!json-loader!./parking.json";
 import table from "./components/table.vue";
 
 const DATE_FORMAT = "DD MMMM";
@@ -114,7 +113,6 @@ export default {
       attribution:
         '&copy; <a  href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     },
-    parkings: parking_data,
     polygon_color: "#ff00ff",
     polygon_color_active: "#ffff00"
   }),
@@ -240,6 +238,188 @@ export default {
 
       return this.polygon_color;
     }
+  },
+  computed : {
+      parkings () {
+          return [
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.696767,
+                          37.356644
+                      ],
+                      [
+                          55.696364,
+                          37.356644
+                      ],
+                      [
+                          55.696354,
+                          37.357194
+                      ],
+                      [
+                          55.696776,
+                          37.357199
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #1",
+                  "places": 38,
+                  "free": 29,
+                  "selected": false,
+                  "address": "Парковка гиперкуба 1",
+                  "sensor_type": this.$i18n.t("message.video_analytics_sensor")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.696529,
+                          37.354085
+                      ],
+                      [
+                          55.696404,
+                          37.354082
+                      ],
+                      [
+                          55.696401,
+                          37.355214
+                      ],
+                      [
+                          55.696538,
+                          37.355228
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #2",
+                  "places": 41,
+                  "free": 12,
+                  "selected": false,
+                  "address": "Парковка гиперкуба 2",
+                  "sensor_type": this.$i18n.t("message.magnet_sensor")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.696522,
+                          37.359247
+                      ],
+                      [
+                          55.696506,
+                          37.361262
+                      ],
+                      [
+                          55.696468,
+                          37.361264
+                      ],
+                      [
+                          55.696465,
+                          37.359261
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #3",
+                  "places": 5,
+                  "free": 2,
+                  "selected": false,
+                  "address": "Парковка матрешки",
+                  "sensor_type": this.$i18n.t("message.volume_sensor")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.688794,
+                          37.355936
+                      ],
+                      [
+                          55.688842,
+                          37.354037
+                      ],
+                      [
+                          55.687066,
+                          37.354316
+                      ],
+                      [
+                          55.687066,
+                          37.354584
+                      ],
+                      [
+                          55.686824,
+                          37.354745
+                      ],
+                      [
+                          55.686794,
+                          37.355421
+                      ],
+                      [
+                          55.688327,
+                          37.355926
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #4",
+                  "places": 115,
+                  "free": 54,
+                  "selected": false,
+                  "address": "Парковка сколковская",
+                  "sensor_type": this.$i18n.t("message.video_analytics")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.686471,
+                          37.335783
+                      ],
+                      [
+                          55.686138,
+                          37.336759
+                      ],
+                      [
+                          55.687292,
+                          37.338111
+                      ],
+                      [
+                          55.68762,
+                          37.337124
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #5",
+                  "places": 54,
+                  "free": 23,
+                  "selected": false,
+                  "address": "",
+                  "sensor_type": this.$i18n.t("message.video_analytics")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.688027,
+                          37.336057
+                      ],
+                      [
+                          55.687739,
+                          37.337296
+                      ],
+                      [
+                          55.687451,
+                          37.338278
+                      ],
+                      [
+                          55.687538,
+                          37.338495
+                      ],
+                      [
+                          55.688475,
+                          37.338264
+                      ],
+                      [
+                          55.688869,
+                          37.337094
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #6",
+                  "places": 55,
+                  "free": 10,
+                  "selected": false,
+                  "address": "",
+                  "sensor_type": this.$i18n.t("message.magnet_sensor")
+              }
+          ]
+      }
   }
 };
 </script>

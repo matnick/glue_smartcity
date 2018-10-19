@@ -22,6 +22,7 @@
                               <v-icon color="grey" small>fa-eye</v-icon>
                            </v-btn>
                         </td>
+                        <td @click="center_map(props.item)">{{ props.item.sensor_type }}</td>
                      </tr>
                   </template>
                </v-data-table>
@@ -63,7 +64,8 @@ export default {
             { text: this.$i18n.t("message.name"), value: "name" },
             { text: this.$i18n.t("message.free"), value: "free" },
             { text: this.$i18n.t("message.places"), value: "places" },
-            { text: this.$i18n.t("message.info"), value: "info" }
+            { text: this.$i18n.t("message.info"), value: "info" },
+            { text: this.$i18n.t("message.sensor_type"), value: "sensor_type" },
         ]
     }
   },
