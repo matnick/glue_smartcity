@@ -1,7 +1,7 @@
 <template>
    <div>
-      <v-layout fix-layout column class="table-column">
-         <v-flex d-inline-flex class="flex-full-height">
+      <v-layout column class="table-column">
+         <v-flex d-inline-flex class="flex-full-height table-container">
             <v-card class="no-shadow">
                <v-data-table :headers="table_headers" :items="table_entries" :pagination.sync="pagination" hide-actions class="elevation-1">
                   <template slot="headers" slot-scope="props">
@@ -54,7 +54,7 @@
             alert
         },
         data: () => ({
-            pagination: { rowsPerPage: 2 }
+            pagination: { rowsPerPage: 5 }
         }),
         props: ["data"],
         computed: {
@@ -90,37 +90,13 @@
         }
     };
 </script>
-
-<style>
-   .no-shadow {
-      box-shadow: none;
-   }
-
-   table.table tbody td,
-   table.table tbody th {
+<style scoped>
+   thead tr {
       height: 25px !important;
    }
 
-   .flex-full-height {
-      height: 100%;
-      padding: 0px !important;
-   }
-
-   .text-center {
-      text-align: center;
-   }
-
-   .pagination-block {
-      display: flex;
-      justify-content: center;
-   }
-</style>
-
-
-
-<style scoped>
-   table.table thead tr {
-      height: 30px;
+   .table-container {
+      box-shadow: none !important;
    }
 
    .button-sm button {
@@ -129,8 +105,15 @@
       margin: 0 !important;
    }
 
-   .table-column {
-      height: 100% !important;
+   .pagination-block >>> .v-pagination__item, .pagination-block >>> .v-pagination__navigation {
+      height: 20px;
+      width:20px;
+      font-size:12px;
+      outline:none;
+   }
+
+   .pagination-block >>> .v-icon {
+      font-size: 12px;
    }
 </style>
 

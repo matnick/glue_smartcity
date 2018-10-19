@@ -350,12 +350,3 @@ export default {
   }}
 };
 </script>
-
-<style>
-.toolbar {
-  z-index: 10;
-}
-.no-logo-margin {
-    margin-left:20px;
-}
-</style>

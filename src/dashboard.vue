@@ -2,7 +2,7 @@
    <v-container grid-list-md fill-height fluid>
       <v-layout column>
          <v-flex d-flex md4>
-            <v-layout class="fix-layout" row wrap>
+            <v-layout  row wrap>
                <v-flex d-flex md3>
                   <v-card :color="waste.color" to="/waste/containers">
                      <v-card-title primary class="title">{{$t("message.waste")}}
@@ -49,7 +49,7 @@
                   </v-card>
                </v-flex>
                <v-flex d-flex md3>
-                  <v-card :color="video.color" to="/safety/video" class="card-image" style="background-image: url(http://www.intek-m.ru/img/cams/cam_17/17_camera.jpg)">
+                  <v-card :color="video.color" to="/safety/video-monitoring" class="card-image" style="background-image: url(http://www.intek-m.ru/img/cams/cam_17/17_camera.jpg)">
                      <v-card-title primary class="title">{{$t("message.video")}}
                         <v-spacer></v-spacer>
                         <v-icon>fa-video</v-icon>
@@ -78,8 +78,8 @@
                   <v-layout column>
                      <v-flex d-flex md6>
                         <v-layout row wrap>
-                           <v-flex class="fix-layout" d-flex md12>
-                              <v-layout class="fix-layout" row wrap>
+                           <v-flex  d-flex md12>
+                              <v-layout  row wrap>
                                  <v-flex d-flex md6>
                                     <v-card :color="meters.color" to="/metering/company">
                                        <div class="chart-background">
@@ -102,7 +102,7 @@
                                     </v-card>
                                  </v-flex>
                                  <v-flex d-flex md6>
-                                    <v-layout class="fix-layout" row wrap>
+                                    <v-layout  row wrap>
                                        <v-flex d-flex md6>
                                           <v-card :color="air.color" to="/eco_monitoring/map">
                                              <div class="chart-background">
@@ -136,8 +136,8 @@
                            </v-flex>
                         </v-layout>
                      </v-flex>
-                     <v-flex class="move-top" d-flex md6>
-                        <v-layout class="fix-layout-large" row wrap>
+                     <v-flex d-flex md6>
+                        <v-layout row wrap>
                            <v-flex d-flex md12>
                               <v-card :color="power.color" to="metering/meters">
                                  <div class="chart-background">
@@ -317,45 +317,8 @@ export default {
 };
 </script>
 
-<style>
-@import "../node_modules/leaflet/dist/leaflet.css";
-
-.container.fill-height .layout.fix-layout {
-  height: calc(100% + 8px);
-}
-
-.container.fill-height .layout.fix-layout-large {
-  height: calc(100% + 16px);
-}
-
-.move-top {
-  margin-top: -8px;
-}
-
-.card-image {
-  background-size: cover;
-  background-position: left center;
-}
-
-.chart {
-  height: calc(100% - 56px);
-}
-
-.card {
-  z-index: 2;
-  overflow: hidden;
-}
-
-.chart-background {
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  height: 100%;
-  width: 100%;
-  opacity: 0.3;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  z-index: 1;
-}
+<style scoped>
+   .chart {
+      height: calc(100% - 56px);
+   }
 </style>

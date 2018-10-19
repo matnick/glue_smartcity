@@ -1,8 +1,8 @@
 <template>
    <v-container grid-list-md fill-height fluid>
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md1>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md12>
                   <v-card-title primary class="title text-center">
                      <span>{{personal.name}}, {{personal.address}}</span>
@@ -11,7 +11,7 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md3>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
                   <v-card>
                      <v-card-title primary class="title">{{$t("message.cold_water_supply")}}</v-card-title>
@@ -29,14 +29,14 @@
                   <v-card>
                      <v-card-text class="pt-0 chart">
                         <bar-chart class="bar-chart" :data="personal.measurements.cold_water.chartData"
-                                   :fillParent="true"></bar-chart>
+                                   :fillParent="true"  :lessTicksY="4"></bar-chart>
                      </v-card-text>
                   </v-card>
                </v-flex>
             </v-layout>
          </v-flex>
          <v-flex d-flex md3>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
                   <v-card>
                      <v-card-title primary class="title">{{$t("message.hot_water_supply")}}</v-card-title>
@@ -54,14 +54,14 @@
                   <v-card>
                      <v-card-text class="pt-0 chart">
                         <bar-chart class="bar-chart" :data="personal.measurements.hot_water.chartData"
-                                   :fillParent="true"></bar-chart>
+                                   :fillParent="true"  :lessTicksY="4"></bar-chart>
                      </v-card-text>
                   </v-card>
                </v-flex>
             </v-layout>
          </v-flex>
          <v-flex d-flex md3>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
                   <v-card>
                      <v-card-title primary class="title">{{$t("message.energy_supply")}}</v-card-title>
@@ -79,14 +79,14 @@
                   <v-card>
                      <v-card-text class="pt-0 chart">
                         <bar-chart class="bar-chart" :data="personal.measurements.energy.chartData"
-                                   :fillParent="true"></bar-chart>
+                                   :fillParent="true"  :lessTicksY="4"></bar-chart>
                      </v-card-text>
                   </v-card>
                </v-flex>
             </v-layout>
          </v-flex>
          <v-flex d-flex md3>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
                   <v-card>
                      <v-card-title primary class="title">{{$t("message.gas_supply")}}</v-card-title>
@@ -102,14 +102,14 @@
                   <v-card>
                      <v-card-text class="pt-0 chart">
                         <bar-chart class="bar-chart" :data="personal.measurements.gas.chartData"
-                                   :fillParent="true"></bar-chart>
+                                   :fillParent="true"  :lessTicksY="4"></bar-chart>
                      </v-card-text>
                   </v-card>
                </v-flex>
             </v-layout>
          </v-flex>
          <v-flex d-flex md1>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md12>
                   <v-card-title primary class="title text-center">
                      {{$t("message.total_due_this_month")}}: {{personal.payment_total_this_month}}
@@ -221,24 +221,3 @@
         }
     };
 </script>
-
-<style>
-   @import "../../node_modules/leaflet/dist/leaflet.css";
-
-   .table-block {
-      height: 100%;
-      padding: 0;
-      margin: 4px 4px 0 4px;
-      background-color: white;
-      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-      0 1px 3px 0 rgba(0, 0, 0, 0.12);
-   }
-
-   .chart {
-      height:82%;
-   }
-
-   .donut-chart, .bar-chart {
-      height: 100%;
-   }
-</style>

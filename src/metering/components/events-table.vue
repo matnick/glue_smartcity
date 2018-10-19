@@ -1,6 +1,6 @@
 <template>
    <div>
-      <v-layout fix-layout column class="table-column">
+      <v-layout column class="table-column">
          <v-flex d-inline-flex class="flex-full-height">
             <v-card v-if="data.length > 0" class="no-shadow">
                <v-data-table :headers="table_headers" :items="data" :pagination.sync="pagination" hide-actions class="elevation-1">
@@ -54,44 +54,9 @@
         },
     };
 </script>
-
-
-<style>
-   .no-shadow {
-      box-shadow: none;
-   }
-
-   table.table tbody td,
-   table.table tbody th {
-      height: 25px !important;
-   }
-
-   .flex-full-height {
-      height: 100%;
-      padding: 0px !important;
-   }
-
-   .text-center {
-      text-align: center;
-   }
-
-   .pagination-block {
-      display: flex;
-      justify-content: center;
-   }
-</style>
-
-
-
 <style scoped>
-   table.table thead tr {
-      height: 30px;
-   }
-
-   .button-sm button {
-      height: 16px;
-      width: 16px;
-      margin: 0 !important;
+   thead tr {
+      height: 25px !important;
    }
 
    .table-column {

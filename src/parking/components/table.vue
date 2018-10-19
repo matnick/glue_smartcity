@@ -1,13 +1,13 @@
 <template>
    <div>
       <detail ref="parkingTable"></detail>
-      <v-layout fix-layout column class="table-column">
+      <v-layout column class="table-column">
          <v-flex d-inline-flex class="flex-full-height">
             <v-card class="no-shadow">
                <v-data-table :headers="table_headers" :items="data" :pagination.sync="pagination" hide-actions class="elevation-1">
                   <template slot="headers" slot-scope="props">
                      <tr class="text-center">
-                        <th v-for="header in props.headers" :key="header.text">
+                        <th v-for="header in props.headers" :key="header.text" :width="header.width">
                            {{ header.text }}
                         </th>
                      </tr>
@@ -61,11 +61,11 @@ export default {
     },
     table_headers () {
         return [
-            { text: this.$i18n.t("message.name"), value: "name" },
-            { text: this.$i18n.t("message.free"), value: "free" },
-            { text: this.$i18n.t("message.places"), value: "places" },
-            { text: this.$i18n.t("message.info"), value: "info" },
-            { text: this.$i18n.t("message.sensor_type"), value: "sensor_type" },
+            { text: this.$i18n.t("message.object_name"), value: "name", width:"20%" },
+            { text: this.$i18n.t("message.free_places"), value: "free", width:"15%" },
+            { text: this.$i18n.t("message.places"), value: "places", width:"15%" },
+            { text: this.$i18n.t("message.info"), value: "info", width:"15%" },
+            { text: this.$i18n.t("message.sensor_type"), value: "sensor_type", width:"25%" },
         ]
     }
   },
@@ -80,59 +80,29 @@ export default {
 };
 </script>
 
-
-<style>
-.no-shadow {
-  box-shadow: none;
-}
-
-table.table tbody td,
-table.table tbody th {
-  height: 25px !important;
-}
-
-.flex-full-height {
-  height: 100%;
-  padding: 0px !important;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.pagination-block {
-   display: flex;
-   justify-content: center;
-}
-</style>
-
-
-
 <style scoped>
-.row-selected {
-  background-color: rgb(155, 204, 255);
-}
+   .row-selected {
+      background-color: rgb(155, 204, 255);
+   }
+   thead tr {
+      height: 25px !important;
+   }
+   .table-column >>> tbody tr {
+      height: 50px !important;
+      cursor: pointer;
+   }
 
-table.table thead tr {
-  height: 30px;
-}
+   .button-sm {
+      margin: -11px !important;
+   }
+   .button-sm button {
+      height: 16px;
+      width: 16px;
+      margin: 0 !important;
+   }
 
-.small_title {
-  height: 30px;
-}
-
-.button-sm {
-  margin: -11px !important;
-}
-
-.button-sm button {
-  height: 16px;
-  width: 16px;
-  margin: 0 !important;
-}
-
-.table-column {
-  height: 100% !important;
-}
+   .table-column {
+      height: 100% !important;
+   }
 </style>
 

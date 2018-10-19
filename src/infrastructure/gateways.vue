@@ -69,19 +69,5 @@ export default {
 };
 </script>
 
-
-
-
-<style>
-.fill-height {
-  height: 100%;
-}
-
-.text-center {
-  text-align: center;
-}
-</style>
-
-
 <style scoped>
 </style>

@@ -87,15 +87,3 @@ export default {
   }
 };
 </script>
-
-<style>
-@import "../../../node_modules/leaflet/dist/leaflet.css";
-
-.no-padding {
-  padding: 0px;
-}
-
-.map {
-  min-height: 300px;
-}
-</style>

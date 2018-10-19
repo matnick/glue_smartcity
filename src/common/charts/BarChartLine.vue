@@ -141,7 +141,7 @@ export default BaseChart.extend({
 })
 </script>
 
-<style>
+<style scoped>
 .bar-chart {
   display: flex;
   justify-content: center;

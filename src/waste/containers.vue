@@ -1,14 +1,14 @@
 <template>
    <v-container grid-list-md fill-height fluid>
 
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md7>
-            <v-layout fix-layout row>
+            <v-layout row>
                <v-flex d-flex md6 class="table-block">
                   <binstable ref="binstable" @row_clicked="table_click" :bins="containers"></binstable>
                </v-flex>
                <v-flex d-flex md6>
-                  <v-layout fix-layout row wrap>
+                  <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card>
                            <l-map :zoom="map.zoom" style="z-index: 5" :center="map.center">
@@ -24,7 +24,7 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md5>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md5>
                   <v-layout row wrap>
                      <v-flex d-flex md12>
@@ -98,7 +98,7 @@ import L from "leaflet";
 import { LMap, LTileLayer, LMarker } from "vue2-leaflet";
 
 import * as d3 from "d3";
-import charts from "../v-charts";
+import charts from "../assets/v-charts";
 Vue.use(charts);
 Object.defineProperty(Vue.prototype, "$d3", { value: d3 });
 
@@ -209,41 +209,19 @@ export default {
 };
 </script>
 
-<style>
-@import "../../node_modules/leaflet/dist/leaflet.css";
-
-.container.fill-height .layout.fix-layout {
-  height: calc(100% + 8px);
-}
-
-.container.fill-height .layout.fix-layout-large {
-  height: calc(100% + 16px);
-}
-
-.move-top {
-  margin-top: -8px;
-}
-
-.table-block {
-  height: calc(100% - 8px);
-  padding: 0;
-  margin: 4px 4px 0 4px;
-  background-color: white;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12);
-}
-
-.table-block > * {
-  max-width: 100%;
-}
-</style>
-
 <style scoped>
-.chart {
-  height: calc(100% - 56px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-left: 32px;
-}
+   .table-block {
+      margin: -4px 4px;
+      height: 100% !important;
+      background-color: #fff;
+      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
+      0 1px 3px 0 rgba(0, 0, 0, 0.12);
+   }
+   .chart {
+      height: calc(100% - 56px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-left: 32px;
+   }
 </style>

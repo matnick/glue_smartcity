@@ -1,11 +1,11 @@
 <template>
    <v-container grid-list-md fill-height fluid>
 
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md7>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md6>
-                  <v-layout fix-layout row wrap>
+                  <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card>
                            <l-map :zoom="map.zoom" style="z-index: 5" :center="map.center">
@@ -21,9 +21,9 @@
                   </v-layout>
                </v-flex>
                <v-flex d-flex md6>
-                  <v-layout fix-layout row wrap>
+                  <v-layout row wrap>
                      <v-flex d-flex md12>
-                        <v-layout fix-layout column="">
+                        <v-layout column="">
                            <v-flex d-flex md12 class="table-block">
                               <parking-table ref="parkingTable" @parking_row_clicked="table_click" :data="parkings"></parking-table>
                            </v-flex>
@@ -34,7 +34,7 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md5>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
                   <v-layout row wrap>
                      <v-flex d-flex md12>
@@ -93,7 +93,7 @@ import BarChart from "./../common/charts/BarChart";
 
 import table from "./components/table.vue";
 
-const DATE_FORMAT = "DD MMMM";
+const DATE_FORMAT = "DD MMM";
 
 export default {
   components: {
@@ -193,41 +193,41 @@ export default {
           title: moment()
             .subtract(6, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(5, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(4, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(3, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(2, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(1, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment().format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         }
       ];
     },
@@ -423,38 +423,3 @@ export default {
   }
 };
 </script>
-
-<style>
-@import "../../node_modules/leaflet/dist/leaflet.css";
-
-.container.fill-height .layout.fix-layout {
-  height: calc(100% + 8px);
-}
-
-.container.fill-height .layout.fix-layout-large {
-  height: calc(100% + 16px);
-}
-
-.move-top {
-  margin-top: -8px;
-}
-
-.table-block {
-  height: calc(100% - 8px);
-  padding: 0;
-  margin: 4px 4px 0 4px;
-  background-color: white;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12);
-}
-
-.card-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chart {
-  height: calc(100% - 56px);
-}
-</style>

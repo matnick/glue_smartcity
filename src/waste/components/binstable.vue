@@ -1,13 +1,13 @@
 <template>
    <div>
       <bindetails ref="bindetails"></bindetails>
-      <v-layout fix-layout column>
+      <v-layout column class="table-block-mt">
          <v-flex d-inline-flex class="flex-full-height">
             <v-card class="no-shadow">
                <v-data-table :headers="table_headers" :items="smartbins" :pagination.sync="pagination" hide-actions class="elevation-1">
                   <template slot="headers" slot-scope="props">
                      <tr class="text-center">
-                        <th v-for="header in props.headers" :key="header.text">
+                        <th v-for="header in props.headers" :key="header.text" :width="header.width">
                            {{ header.text }}
                         </th>
                      </tr>
@@ -55,11 +55,11 @@ export default {
   computed: {
     table_headers () {
       return [
-            { text: this.$i18n.t("message.name"), value: "name" },
-            { text: this.$i18n.t("message.level"), value: "level" },
-            { text: this.$i18n.t("message.status"), value: "status" },
-            { text: this.$i18n.t("message.vendor"), value: "vendor" },
-            { text: this.$i18n.t("message.info"), value: "info" }
+            { text: this.$i18n.t("message.name"), value: "name", width:"30%" },
+            { text: this.$i18n.t("message.level"), value: "level", width:"15%" },
+            { text: this.$i18n.t("message.status"), value: "status", width:"15%"  },
+            { text: this.$i18n.t("message.vendor"), value: "vendor", width:"20%"  },
+            { text: this.$i18n.t("message.info"), value: "info", width:"15%"  }
         ]
     },
     pages() {
@@ -88,54 +88,10 @@ export default {
 };
 </script>
 
-
-<style>
-.no-shadow {
-  box-shadow: none;
-}
-
-.elevation-1 tbody td,
-.elevation-1 tbody th {
-  height: 25px !important;
-}
-
-.elevation-1 table {
-  table-layout: fixed;
-}
-
-.elevation-1 {
-  max-height: 100%;
-  overflow: hidden;
-}
-
-.elevation-1 tr {
-  height: 30px;
-}
-
-.elevation-1 tr td {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden;
-}
-
-.flex-full-height {
-  height: 100%;
-  padding: 0px !important;
-}
-
-.text-center {
-  text-align: center;
-}
-
-.pagination-block {
-   display: flex;
-   justify-content: center;
-}
-</style>
-
-
-
 <style scoped>
+.table-block-mt {
+   margin-top: 4px !important;
+}
 .row-selected {
   background-color: rgb(155, 204, 255);
 }
@@ -152,6 +108,15 @@ export default {
   height: 16px;
   width: 16px;
   margin: 0 !important;
+}
+
+thead tr {
+   height: 25px !important;
+}
+
+.table-column >>> tbody tr {
+   height: 50px;
+   cursor:pointer;
 }
 </style>
 
