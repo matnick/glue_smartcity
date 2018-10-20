@@ -1,6 +1,6 @@
 <template>
    <v-container grid-list-md fill-height fluid>
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md12>
             <v-card>
                <l-map :zoom="map.zoom" :center="map.center">
@@ -44,12 +44,10 @@ export default {
   methods: {
     download_data() {
       Vue.axios
-        .get("/we/weather_stations")
+        .get("https://it77.ru:8082/we/weather_stations")
         .then(response => {
           this.stations = this.convert_backend_data(response.data);
           this.heatmapData.data = this.stations;
-          //console.log(this.heatmapData.data);
-          //console.log(this.stations);
         })
         .catch(error => {
           console.log(error);
@@ -91,7 +89,7 @@ export default {
     },
     update() {
       Vue.axios
-        .get("/we/weather_api")
+        .get("https://it77.ru:8082/we/weather_api")
         .then(response => {
           console.log(response.data[14]);
           this.heatmapData.data = response.data;
@@ -133,19 +131,3 @@ export default {
   })
 };
 </script>
-
-<style>
-@import "../../node_modules/leaflet/dist/leaflet.css";
-
-.container.fill-height .layout.fix-layout {
-  height: calc(100% + 8px);
-}
-
-.container.fill-height .layout.fix-layout-large {
-  height: calc(100% + 16px);
-}
-
-.move-top {
-  margin-top: -8px;
-}
-</style>

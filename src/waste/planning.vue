@@ -194,28 +194,3 @@ table.table thead tr {
   margin: -11px !important;
 }
 </style>
-
-<style>
-@import "../../node_modules/leaflet/dist/leaflet.css";
-
-.container.fill-height .layout.fix-layout {
-  height: calc(100% + 8px);
-}
-
-.container.fill-height .layout.fix-layout-large {
-  height: calc(100% + 16px);
-}
-
-.move-top {
-  margin-top: -8px;
-}
-
-.progress {
-  margin-left: 16px;
-}
-
-.progress-button {
-  transition: all 0.3s ease;
-  color: rgba(0,0,0,.3) !important;
-}
-</style>

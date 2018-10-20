@@ -108,19 +108,3 @@ export default BaseChart.extend({
   }
 })
 </script>
-
-<style>
-.donut-outer {
-  display: flex;
-  justify-content: center;
-}
-
-.donut-chart {
-  max-width: 100%;
-}
-
-.donut-chart text {
-  font: 10px sans-serif;
-  text-anchor: middle;
-}
-</style>

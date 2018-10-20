@@ -1,8 +1,8 @@
 <template>
    <v-container grid-list-md fill-height fluid>
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md3>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md12>
                   <v-card color="green">
                   </v-card>
@@ -10,7 +10,7 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md5>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md7>
                   <v-card color="green">
                   </v-card>
@@ -22,7 +22,7 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md4>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md3>
                   <v-card color="green">
                   </v-card>
@@ -50,19 +50,3 @@ export default {
   data: () => ({})
 };
 </script>
-
-<style>
-@import "../../node_modules/leaflet/dist/leaflet.css";
-
-.container.fill-height .layout.fix-layout {
-  height: calc(100% + 8px);
-}
-
-.container.fill-height .layout.fix-layout-large {
-  height: calc(100% + 16px);
-}
-
-.move-top {
-  margin-top: -8px;
-}
-</style>

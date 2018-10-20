@@ -111,14 +111,3 @@ export default BaseChart.extend({
   }
 })
 </script>
-
-<style>
-.bar-chart {
-  display: flex;
-  justify-content: center;
-}
-
-.axis-hidden .domain {
-  stroke: transparent;
-}
-</style>

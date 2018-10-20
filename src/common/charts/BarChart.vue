@@ -8,7 +8,7 @@ import * as d3 from 'd3'
 
 export default BaseChart.extend({
   name: 'bar-chart',
-  props: ['data', 'hideAxis', 'fillParent', 'isDashboard', 'maxValue', 'barColor'],
+  props: ['data', 'hideAxis', 'fillParent', 'isDashboard', 'maxValue', 'barColor', 'lessTicksY'],
   data: () => ({
     className: 'bar-chart'
   }),
@@ -61,14 +61,14 @@ export default BaseChart.extend({
         }
       }
       
-      const ticksHidden = width < 300 || this.hideAxis
-      const padding = ticksHidden ? 8 : 24
+      const ticksHidden = width < 300 || this.hideAxis;
+      const padding = ticksHidden ? 8 : 24;
       
       let svg = d3.select(this.$el).append("svg").attr("width", width).attr("height", height);
 
       var xScale = d3.scaleBand()
         .rangeRound([padding, width - padding])
-        .padding(0.1)
+        .padding(0.2)
         .domain(this.data.map((d) => d.title));
 
       var yScale = d3.scaleLinear()
@@ -84,16 +84,25 @@ export default BaseChart.extend({
         svg.append("g")
           .attr("transform", "translate(" + padding + "," + 0 + ")")
           .call(d3.axisLeft(yScale).tickSizeOuter(0).tickSizeInner(0).tickFormat(''));
-      } else {
+      }
+      else if (this.lessTicksY) {
         svg.append("g")
           .attr("transform", "translate(" + 0 + "," + (height - padding) + ")")
           .call(d3.axisBottom(xScale));
 
         svg.append("g")
           .attr("transform", "translate(" + padding + "," + 0 + ")")
-          .call(d3.axisLeft(yScale));
+          .call(d3.axisLeft(yScale).ticks(this.lessTicksY).tickSizeOuter(0).tickSizeInner(5));
       }
+      else {
+          svg.append("g")
+              .attr("transform", "translate(" + 0 + "," + (height - padding) + ")")
+              .call(d3.axisBottom(xScale));
 
+          svg.append("g")
+              .attr("transform", "translate(" + padding + "," + 0 + ")")
+              .call(d3.axisLeft(yScale));
+      }
       svg.append("g")
         .selectAll("rect")
         .data(this.data)
@@ -111,14 +120,3 @@ export default BaseChart.extend({
   }
 })
 </script>
-
-<style>
-.bar-chart {
-  display: flex;
-  justify-content: center;
-}
-
-.axis-hidden .domain {
-  stroke: transparent;
-}
-</style>

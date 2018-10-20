@@ -46,7 +46,7 @@ export default {
   methods: {
     download_data() {
       Vue.axios
-        .get("/we/weather_stations")
+        .get("https://it77.ru:8082/we/weather_stations")
         .then(response => {
           this.station_table = this.convert_backend_data(response.data);
           console.log(response.data);
@@ -112,20 +112,6 @@ export default {
   }
 };
 </script>
-
-
-
-
-<style>
-.fill-height {
-  height: 100%;
-}
-
-.text-center {
-  text-align: center;
-}
-</style>
-
 
 <style scoped>
 </style>

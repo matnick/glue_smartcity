@@ -1,10 +1,10 @@
 <template>
    <v-container grid-list-md fill-height fluid>
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md8>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
-                  <v-layout column fix-layout>
+                  <v-layout column >
                      <v-flex d-flex md6>
                          <v-card flat>
                             <iframe src="/grafana/d-solo/Rfv-XEHmk/scpower?panelId=10" class="iframe-size" scrolling="no" frameborder="0"></iframe>
@@ -35,7 +35,7 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md4>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
                   <div class="gauge">
                      <div>{{$t("message.imbalance")}}</div>
@@ -131,35 +131,3 @@ export default {
   }
 };
 </script>
-
-<style>
-.iframe-size {
-  height: 100%;
-  width: 100%;
-  border: none;
-  overflow:hidden;
-}
-.singlestat {
-  color:#52545c;
-  font-weight: 500;
-  height:70px;
-  text-align:center;
-}
-.singlestat .value {
-  font-size: 30px;
-}
-.gauge {
-  color:#52545c;
-  font-weight: 500;
-  text-align:center;
-}
-.norm {
-  background-color:#299c46;
-}
-.warn {
-  background-color:#ED8128;
-}
-.crit {
-  background-color:#d44a3a;
-}
-</style>

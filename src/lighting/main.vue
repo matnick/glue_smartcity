@@ -1,10 +1,10 @@
 <template>
    <v-container grid-list-md fill-height fluid>
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md6>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md6>
-                  <v-layout fix-layout row wrap>
+                  <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card>
                            <l-map :zoom="map.zoom" style="z-index: 5" :center="map.center">
@@ -32,16 +32,12 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md6>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md6>
-                  <v-layout fix-layout row wrap>
-                     <v-flex d-flex md12>
-                        <v-layout fix-layout column="">
-                           <v-flex d-flex md12 class="table-block">
+                  <v-layout row wrap>
+                           <v-flex d-flex md12 class="table-block table-block-vm">
                               <lighting-table ref="lightingTable" @lighting_row_clicked="table_click" :data="lights"></lighting-table>
                            </v-flex>
-                        </v-layout>
-                     </v-flex>
                   </v-layout>
 
                </v-flex>
@@ -81,7 +77,7 @@
     import table from "./components/table.vue";
     import detail from "./components/detail.vue";
 
-    const DATE_FORMAT = "DD MMMM";
+    const DATE_FORMAT = "DD MMM";
 
     export default {
         components: {
@@ -171,41 +167,41 @@
                         title: moment()
                             .subtract(6, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 100)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(5, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 100)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(4, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 100)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(3, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 100)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(2, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 100)
+                        value: Math.ceil(Math.random() * 30 + 30)
                     },
                     {
                         title: moment()
                             .subtract(1, "days")
                             .format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 100)
+                        value: Math.ceil(Math.random() * 40 + 20)
                     },
                     {
                         title: moment().format(DATE_FORMAT),
-                        value: Math.ceil(Math.random() * 100)
+                        value: Math.ceil(Math.random() * 40 + 20)
                     }
                 ];
             },
@@ -213,22 +209,29 @@
 
                 let total_lights = this.lights.length;
 
-                let active_lights = this.lights.filter(function(data){ return data.status === "active" }).length;
-                let inactive_lights = this.lights.filter(function(data){ return data.status === "inactive" }).length;
-                let failure_lights = this.lights.filter(function(data){ return data.status === "failure" }).length;
+                let active_lights = this.lights.filter(function (data) {
+                    return data.status === "active"
+                }).length;
+                let inactive_lights = this.lights.filter(function (data) {
+                    return data.status === "inactive"
+                }).length;
+                let failure_lights = this.lights.filter(function (data) {
+                    return data.status === "failure"
+                }).length;
 
                 return [
                     {
-                        title: this.$i18n.t("message.active_lights") + " (" + active_lights + ") ," + (active_lights/total_lights * 100) + "%",
+                        title: this.$i18n.t("message.active_lights") + " " + (active_lights / total_lights * 100) + "%" + " (" + active_lights + " " + this.$i18n.t("message.pieces_short") + ")",
                         value: active_lights,
                         color: "#039BE5"
                     },
                     {
-                        title: this.$i18n.t("message.inactive_lights") + " (" + inactive_lights + ") ," + (inactive_lights/total_lights * 100) + "%",
+                        title: this.$i18n.t("message.inactive_lights") + " " + (inactive_lights / total_lights * 100) + "%" + " (" + inactive_lights + " " + this.$i18n.t("message.pieces_short") + ")",
                         value: inactive_lights,
-                        color: "#8D6E63" },
+                        color: "#8D6E63"
+                    },
                     {
-                        title: this.$i18n.t("message.failure_lights")+ " (" + failure_lights + ") ," + (failure_lights/total_lights * 100) + "%",
+                        title: this.$i18n.t("message.failure_lights") + " " + (failure_lights / total_lights * 100) + "%" + " (" + failure_lights + " " + this.$i18n.t("message.pieces_short") + ")",
                         value: failure_lights,
                         color: "#FFF"
                     }
@@ -237,24 +240,3 @@
         }
     };
 </script>
-
-<style>
-   @import "../../node_modules/leaflet/dist/leaflet.css";
-
-   .table-block {
-      height: 100%;
-      padding: 0;
-      margin: 4px 4px 0 4px;
-      background-color: white;
-      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-      0 1px 3px 0 rgba(0, 0, 0, 0.12);
-   }
-
-   .chart {
-      height:82%;
-   }
-
-   .donut-chart, .bar-chart {
-      height: 100%;
-   }
-</style>

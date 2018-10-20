@@ -1,11 +1,11 @@
 <template>
    <v-container grid-list-md fill-height fluid>
 
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md7>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md6>
-                  <v-layout fix-layout row wrap>
+                  <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card>
                            <l-map :zoom="map.zoom" style="z-index: 5" :center="map.center">
@@ -21,9 +21,9 @@
                   </v-layout>
                </v-flex>
                <v-flex d-flex md6>
-                  <v-layout fix-layout row wrap>
+                  <v-layout row wrap>
                      <v-flex d-flex md12>
-                        <v-layout fix-layout column="">
+                        <v-layout column="">
                            <v-flex d-flex md12 class="table-block">
                               <parking-table ref="parkingTable" @parking_row_clicked="table_click" :data="parkings"></parking-table>
                            </v-flex>
@@ -34,7 +34,7 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md5>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
                   <v-layout row wrap>
                      <v-flex d-flex md12>
@@ -91,10 +91,9 @@ import { LMap, LTileLayer, LPolygon, LPopup } from "vue2-leaflet";
 import DonutChart from "./../common/charts/DonutChart";
 import BarChart from "./../common/charts/BarChart";
 
-import parking_data from "!json-loader!./parking.json";
 import table from "./components/table.vue";
 
-const DATE_FORMAT = "DD MMMM";
+const DATE_FORMAT = "DD MMM";
 
 export default {
   components: {
@@ -114,7 +113,6 @@ export default {
       attribution:
         '&copy; <a  href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     },
-    parkings: parking_data,
     polygon_color: "#ff00ff",
     polygon_color_active: "#ffff00"
   }),
@@ -195,41 +193,41 @@ export default {
           title: moment()
             .subtract(6, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(5, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(4, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(3, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(2, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment()
             .subtract(1, "days")
             .format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         },
         {
           title: moment().format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 40 + 40)
         }
       ];
     },
@@ -240,41 +238,188 @@ export default {
 
       return this.polygon_color;
     }
+  },
+  computed : {
+      parkings () {
+          return [
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.696767,
+                          37.356644
+                      ],
+                      [
+                          55.696364,
+                          37.356644
+                      ],
+                      [
+                          55.696354,
+                          37.357194
+                      ],
+                      [
+                          55.696776,
+                          37.357199
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #1",
+                  "places": 38,
+                  "free": 29,
+                  "selected": false,
+                  "address": "Парковка гиперкуба 1",
+                  "sensor_type": this.$i18n.t("message.video_analytics_sensor")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.696529,
+                          37.354085
+                      ],
+                      [
+                          55.696404,
+                          37.354082
+                      ],
+                      [
+                          55.696401,
+                          37.355214
+                      ],
+                      [
+                          55.696538,
+                          37.355228
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #2",
+                  "places": 41,
+                  "free": 12,
+                  "selected": false,
+                  "address": "Парковка гиперкуба 2",
+                  "sensor_type": this.$i18n.t("message.magnet_sensor")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.696522,
+                          37.359247
+                      ],
+                      [
+                          55.696506,
+                          37.361262
+                      ],
+                      [
+                          55.696468,
+                          37.361264
+                      ],
+                      [
+                          55.696465,
+                          37.359261
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #3",
+                  "places": 5,
+                  "free": 2,
+                  "selected": false,
+                  "address": "Парковка матрешки",
+                  "sensor_type": this.$i18n.t("message.volume_sensor")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.688794,
+                          37.355936
+                      ],
+                      [
+                          55.688842,
+                          37.354037
+                      ],
+                      [
+                          55.687066,
+                          37.354316
+                      ],
+                      [
+                          55.687066,
+                          37.354584
+                      ],
+                      [
+                          55.686824,
+                          37.354745
+                      ],
+                      [
+                          55.686794,
+                          37.355421
+                      ],
+                      [
+                          55.688327,
+                          37.355926
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #4",
+                  "places": 115,
+                  "free": 54,
+                  "selected": false,
+                  "address": "Парковка сколковская",
+                  "sensor_type": this.$i18n.t("message.video_analytics")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.686471,
+                          37.335783
+                      ],
+                      [
+                          55.686138,
+                          37.336759
+                      ],
+                      [
+                          55.687292,
+                          37.338111
+                      ],
+                      [
+                          55.68762,
+                          37.337124
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #5",
+                  "places": 54,
+                  "free": 23,
+                  "selected": false,
+                  "address": "",
+                  "sensor_type": this.$i18n.t("message.video_analytics")
+              },
+              {
+                  "polygone_coordinates": [
+                      [
+                          55.688027,
+                          37.336057
+                      ],
+                      [
+                          55.687739,
+                          37.337296
+                      ],
+                      [
+                          55.687451,
+                          37.338278
+                      ],
+                      [
+                          55.687538,
+                          37.338495
+                      ],
+                      [
+                          55.688475,
+                          37.338264
+                      ],
+                      [
+                          55.688869,
+                          37.337094
+                      ]
+                  ],
+                  "name": this.$i18n.t("message.parking_single")+" #6",
+                  "places": 55,
+                  "free": 10,
+                  "selected": false,
+                  "address": "",
+                  "sensor_type": this.$i18n.t("message.magnet_sensor")
+              }
+          ]
+      }
   }
 };
 </script>
-
-<style>
-@import "../../node_modules/leaflet/dist/leaflet.css";
-
-.container.fill-height .layout.fix-layout {
-  height: calc(100% + 8px);
-}
-
-.container.fill-height .layout.fix-layout-large {
-  height: calc(100% + 16px);
-}
-
-.move-top {
-  margin-top: -8px;
-}
-
-.table-block {
-  height: calc(100% - 8px);
-  padding: 0;
-  margin: 4px 4px 0 4px;
-  background-color: white;
-  box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-    0 1px 3px 0 rgba(0, 0, 0, 0.12);
-}
-
-.card-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chart {
-  height: calc(100% - 56px);
-}
-</style>

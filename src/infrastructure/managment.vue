@@ -18,21 +18,5 @@ export default {
 };
 </script>
 
-
-<style>
-.fill-height {
-  height: 100%;
-  padding: 0px;
-  padding-top: 2px;
-}
-
-.iframe-size {
-  height: 100%;
-  width: 100%;
-  border: none;
-}
-</style>
-
-
 <style scoped>
 </style>

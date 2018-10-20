@@ -25,12 +25,12 @@ import metering_company from './metering/company.vue'
 import metering_personal from './metering/personal.vue'
 
 
-import infras_incidents from './infrastructure/incidents_new.vue'
+import infras_incidents from './infrastructure/incidents.vue'
 import infras_stat from './infrastructure/energy_management.vue'
 import infras_monitoring from './infrastructure/monitoring.vue'
 import infras_managment from './infrastructure/managment.vue'
 import infras_gateways from './infrastructure/gateways.vue'
-waste_containers
+
 import waste_containers from './waste/containers.vue'
 import waste_planning from './waste/planning.vue'
 import waste_managment from './waste/managment.vue'
@@ -104,9 +104,18 @@ const router = new VueRouter({
       component: eco_monitoring_aqi
    },
    {
+      path: '/eco_monitoring/aqi1',
+      component: eco_monitoring_aqi
+   },
+   {
       path: '/eco_monitoring/sityair',
       component: eco_monitoring_sityair
-   }, {
+   },
+   {
+      path: '/eco_monitoring/sityair1',
+      component: eco_monitoring_sityair
+   },
+   {
       path: '/parking/map',
       component: parking_map
    }, {
@@ -115,10 +124,24 @@ const router = new VueRouter({
    }, {
       path: '/lighting/main',
       component: lighting_main
-   }, {
+   },
+   {
       path: '/lighting/unilight',
       component: lighting_unilight
-   }, {
+   },
+   {
+      path: '/lighting/unilight1',
+      component: lighting_unilight
+   },
+   {
+      path: '/lighting/unilight2',
+      component: lighting_unilight
+   },
+   {
+      path: '/lighting/unilight3',
+      component: lighting_unilight
+   },
+   {
       path: '/safety/acs_lora',
       component: safety_acs_lora
    }, {
@@ -133,7 +156,12 @@ const router = new VueRouter({
    }, {
       path: '/metering/linergo',
       component: metering_linergo
-   }, {
+   },
+   {
+      path: '/metering/linergo1',
+      component: metering_linergo
+   },
+   {
       path: '/metering/meters',
       component: metering_meters
    }, {
@@ -166,10 +194,24 @@ const router = new VueRouter({
    }, {
       path: '/waste/stat',
       component: waste_stat
-   }, {
+   },
+   {
       path: '/waste/managment',
       component: waste_managment
-   }, {
+   },
+   {
+      path: '/waste/managment1',
+      component: waste_managment
+   },
+   {
+      path: '/waste/managment2',
+      component: waste_managment
+   },
+   {
+      path: '/waste/managment3',
+      component: waste_managment
+   },
+   {
       path: '*',
       redirect: '/dashboard'
    }]
@@ -292,7 +334,7 @@ const store = new Vuex.Store({
     actions: {
         getWasteData: ({ commit }) => {
             Axios.get(
-                "https://sk.iot.nokia.com/we/cleancity_data"
+                "https://it77.ru:8082/we/cleancity_data"
             )
                 .then(response => {
                     commit("updateWasteMarkers", response.data.cleancity)
@@ -308,6 +350,7 @@ const store = new Vuex.Store({
 });
 
 import L from 'leaflet'
+import "../node_modules/leaflet/dist/leaflet.css";
 
 delete L.Icon.Default.prototype._getIconUrl
 
@@ -322,6 +365,8 @@ const i18n = new Vue_i18n({
     locale: store.state.locale,
     messages,
 })
+
+import "../src/assets/global.css";
 
 new Vue({
    el: '#app',

@@ -13,6 +13,7 @@
       "waste": "Waste",
       "waste_monitoring": "Waste mointoring",
       "parking": "Parking",
+      "parking_single": "Parking",
       "transport": "Transport",
       "lighting": "Lighting",
       "planning": "Planning",
@@ -26,7 +27,9 @@
       "air_and_weather": "Air and weather",
       "power": "Power",
       "power_infrastructure": "Power infrastructure",
+      "free_places": "Free places",
       "free": "Free",
+      "pieces_short": "pcs.",
       "average_park_time": "Average Park Time",
       "lamps_on": "Lamps on",
       "consumption": "Consumption",
@@ -36,6 +39,7 @@
       "weather": "Weather",
       "incidents": "Incidents",
       "name": "Name",
+      "object_name": "Name",
       "aqi": "AQI",
       "type": "Type",
       "status": "Status",
@@ -118,7 +122,11 @@
       "roubles_short": "RUB",
       "total_due_this_month": "Total payment due this month",
       "total_previous_month": "Total in previous month",
-      "house_average": "House average"
+      "house_average": "House average",
+      "magnet_sensor": "Magnet sensor",
+      "volume_sensor": "Volume sensor",
+      "video_analytics_sensor": "Video analytics",
+      "sensor_type": "Sensor type"
     }
   },
   "ru": {
@@ -135,6 +143,7 @@
       "waste": "Мусор",
       "waste_monitoring": "Мониторинг уборки мусора",
       "parking": "Парковки",
+      "parking_single": "Парковка",
       "transport": "Транспорт",
       "lighting": "Освещение",
       "planning": "Планирование",
@@ -148,7 +157,9 @@
       "air_and_weather": "Воздух и погода",
       "power": "Мощность",
       "power_infrastructure": "Энергосистема",
-      "free": "Свободно мест",
+      "free_places": "Свободно мест",
+      "free": "Свободно",
+      "pieces_short": "шт.",
       "average_park_time": "Среднее время на парковке",
       "lamps_on": "Ламп включено",
       "consumption": "Потребление",
@@ -158,6 +169,7 @@
       "weather": "Погода",
       "incidents": "Проишествия",
       "name": "Имя",
+      "object_name": "Название",
       "aqi": "AQI",
       "type": "Тип",
       "status": "Статус",
@@ -240,7 +252,11 @@
       "roubles_short": "руб.",
       "total_due_this_month": "Всего к оплате в этом месяце",
       "total_previous_month": "В прошлом месяце",
-      "house_average": "Среднее по дому"
+      "house_average": "Среднее по дому",
+      "sensor_type": "Тип датчика",
+      "magnet_sensor": "Магнитный датчик",
+      "volume_sensor": "Датчкик объема",
+      "video_analytics_sensor": "Видео аналитика"
     }
   }
 }

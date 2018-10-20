@@ -19,7 +19,7 @@
     }
 </script>
 
-<style>
+<style scoped>
     .invisible {
         opacity: 0;
     }

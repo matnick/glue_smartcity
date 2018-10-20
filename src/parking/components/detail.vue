@@ -36,7 +36,7 @@ import 'moment/locale/ru';
 
 import BarChart from "./../../common/charts/BarChart";
 
-const DATE_FORMAT = 'DD MMMM'
+const DATE_FORMAT = 'DD MMM'
 
 export default {
   components: {
@@ -58,31 +58,31 @@ export default {
       return [
         {
           title: moment().subtract(6, 'days').format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 30 + 30)
         },
         {
           title: moment().subtract(5, 'days').format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 30 + 30)
         },
         {
           title: moment().subtract(4, 'days').format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 30 + 30)
         },
         {
           title: moment().subtract(3, 'days').format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 30 + 30)
         },
         {
           title: moment().subtract(2, 'days').format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 30 + 30)
         },
         {
           title: moment().subtract(1, 'days').format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 30 + 30)
         },
         {
           title: moment().format(DATE_FORMAT),
-          value: Math.ceil(Math.random() * 100)
+          value: Math.ceil(Math.random() * 30 + 30)
         },
       ];
     },

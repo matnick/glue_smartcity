@@ -36,13 +36,5 @@ export default {
 };
 </script>
 
-
-<style>
-.fill-height {
-  height: 100%;
-}
-</style>
-
-
 <style scoped>
 </style>

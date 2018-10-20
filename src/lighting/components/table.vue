@@ -1,6 +1,6 @@
 <template>
    <div>
-      <v-layout fix-layout column class="table-column">
+      <v-layout column class="table-column">
          <v-flex d-inline-flex class="flex-full-height">
             <v-card class="no-shadow">
                <v-data-table :headers="table_headers" :items="table_entries" :pagination.sync="pagination" hide-actions class="elevation-1">
@@ -39,7 +39,7 @@
             detail
         },
         data: () => ({
-            pagination: { rowsPerPage: 4 }
+            pagination: { rowsPerPage: 6 }
         }),
         props: ["data"],
         computed: {
@@ -70,37 +70,14 @@
     };
 </script>
 
-
-<style>
-   .no-shadow {
-      box-shadow: none;
-   }
-
-   table.table tbody td,
-   table.table tbody th {
+<style scoped>
+   thead tr {
       height: 25px !important;
    }
 
-   .flex-full-height {
-      height: 100%;
-      padding: 0px !important;
-   }
-
-   .text-center {
-      text-align: center;
-   }
-
-   .pagination-block {
-      display: flex;
-      justify-content: center;
-   }
-</style>
-
-
-
-<style scoped>
-   table.table thead tr {
-      height: 30px;
+   .table-column >>> tbody tr {
+      height: 50px;
+      cursor:pointer;
    }
 
    .button-sm button {

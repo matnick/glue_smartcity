@@ -148,12 +148,12 @@ export default {
                     },
                     {
                         icon: "fa-calendar-alt",
-                        path: "/eco_monitoring/aqi",
+                        path: "/eco_monitoring/aqi1",
                         text: this.$i18n.t("message.partner")+" #3"
                     },
                     {
                         icon: "fa-calendar-alt",
-                        path: "/eco_monitoring/sityair",
+                        path: "/eco_monitoring/sityair1",
                         text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
@@ -199,17 +199,17 @@ export default {
                     },
                     {
                         icon: "fa-external-link-square-alt",
-                        path: "/lighting/unilight",
+                        path: "/lighting/unilight1",
                         text: this.$i18n.t("message.partner")+" #2"
                     },
                     {
                         icon: "fa-external-link-square-alt",
-                        path: "/lighting/unilight",
+                        path: "/lighting/unilight2",
                         text: this.$i18n.t("message.partner")+" #3"
                     },
                     {
                         icon: "fa-external-link-square-alt",
-                        path: "/lighting/unilight",
+                        path: "/lighting/unilight3",
                         text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
@@ -270,7 +270,7 @@ export default {
                     },
                     {
                         icon: "fa-external-link-square-alt",
-                        path: "/metering/linergo",
+                        path: "/metering/linergo1",
                         text: this.$i18n.t("message.partner")+" #3"
                     }
                 ]
@@ -331,17 +331,17 @@ export default {
                     },
                     {
                         icon: "fa-calendar-alt",
-                        path: "/waste/managment",
+                        path: "/waste/managment1",
                         text: this.$i18n.t("message.partner")+" #2"
                     },
                     {
                         icon: "fa-calendar-alt",
-                        path: "/waste/managment",
+                        path: "/waste/managment2",
                         text: this.$i18n.t("message.partner")+" #3"
                     },
                     {
                         icon: "fa-calendar-alt",
-                        path: "/waste/managment",
+                        path: "/waste/managment3",
                         text: this.$i18n.t("message.partner")+" #4"
                     }
                 ]
@@ -350,12 +350,3 @@ export default {
   }}
 };
 </script>
-
-<style>
-.toolbar {
-  z-index: 10;
-}
-.no-logo-margin {
-    margin-left:20px;
-}
-</style>

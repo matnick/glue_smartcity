@@ -1,10 +1,10 @@
 <template>
    <v-container grid-list-md fill-height fluid>
-      <v-layout column fix-layout>
+      <v-layout column >
          <v-flex d-flex md4>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
-                  <v-layout fix-layout row wrap>
+                  <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card>
                            <l-map :zoom="map.zoom" style="z-index: 5" :center="map.center">
@@ -21,20 +21,16 @@
                </v-flex>
                <v-flex d-flex md8>
                   <v-layout row wrap>
-                     <v-flex d-flex md12>
-                        <v-layout fix-layout column="">
-                           <v-flex d-flex md12 class="table-block">
+                           <v-flex d-flex md12 class="table-block table-block-vm">
                               <houses-table ref="housesTable" @house_row_clicked="table_click"
                                             :data="houses"></houses-table>
                            </v-flex>
-                        </v-layout>
-                     </v-flex>
                   </v-layout>
                </v-flex>
             </v-layout>
          </v-flex>
          <v-flex d-flex md1>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md12>
                   <h2 class="text-center mt-2">
                      {{active_item.street_name}}, {{$t("message.house_prefix")}} {{active_item.house_number}}.
@@ -44,9 +40,9 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md3>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
-                  <v-layout fix-layout row wrap>
+                  <v-layout row wrap>
                      <v-flex d-flex md12>
                         <v-card>
                            <div class="chart-background">
@@ -96,7 +92,7 @@
             </v-layout>
          </v-flex>
          <v-flex d-flex md4>
-            <v-layout fix-layout row wrap>
+            <v-layout row wrap>
                <v-flex d-flex md4>
                   <v-layout row wrap>
                      <v-flex d-flex md12>
@@ -115,7 +111,7 @@
                </v-flex>
                <v-flex d-flex md8>
                   <v-layout row wrap>
-                     <v-flex d-flex md12 class="table-block">
+                     <v-flex d-flex md12 class="table-block table-block-vm">
                         <eventsTable :data="active_item.events"></eventsTable>
                      </v-flex>
                   </v-layout>
@@ -218,41 +214,3 @@
         }
     };
 </script>
-
-<style>
-   @import "../../node_modules/leaflet/dist/leaflet.css";
-
-   .table-block {
-      height: 100%;
-      padding: 0;
-      margin: 4px 4px 0 4px;
-      background-color: white;
-      box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14),
-      0 1px 3px 0 rgba(0, 0, 0, 0.12);
-   }
-
-   .chart {
-      height:82%;
-   }
-
-   .bar-chart {
-      align-self: flex-end;
-   }
-
-   .deviant {
-      color: red;
-   }
-
-   .chart-background {
-      position: absolute;
-      top: 0px;
-      left: 0px;
-      height: 100%;
-      width: 100%;
-      opacity: 0.3;
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      z-index: 1;
-   }
-</style>
