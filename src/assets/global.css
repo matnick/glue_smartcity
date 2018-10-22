@@ -226,3 +226,7 @@ table.table thead tr {
     font: 10px sans-serif;
     text-anchor: middle;
 }
+
+.containerLevelGlyph span {
+    font-size: 10px !important;
+}
