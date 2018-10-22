@@ -50,7 +50,6 @@ export default {
         [55.696342, 37.359745],
         [55.696623, 37.356674],
         [55.694659, 37.3438],
-        [55.683824, 37.335218],
         [55.680333, 37.345947],
         [55.679254, 37.34153]
       ],
@@ -61,17 +60,25 @@ export default {
         coordinates: L.latLng(55.696623, 37.356674),
         name: "Waste container #23",
         type: "waste",
-        level: "20",
+        level: "70",
         battery: "93",
-        status: "online"
+        status: "online",
+        icon: L.icon.glyph({
+              className:"containerLevelGlyph",
+              glyph: "70%"
+        })
       },
       {
         coordinates: L.latLng(55.696342, 37.359745),
         name: "Waste container #65",
         type: "waste",
-        level: "40",
+        level: "45",
         battery: "93",
-        status: "online"
+        status: "online",
+        icon: L.icon.glyph({
+              className:"containerLevelGlyph",
+              glyph: "45%"
+        })
       },
       {
         coordinates: L.latLng(55.699384, 37.366796),
@@ -79,7 +86,11 @@ export default {
         type: "waste",
         level: "80",
         battery: "98",
-        status: "online"
+        status: "online",
+        icon: L.icon.glyph({
+              className:"containerLevelGlyph",
+              glyph: "80%"
+        })
       },
       {
         coordinates: L.latLng(55.70835, 37.374306),
@@ -87,50 +98,71 @@ export default {
         type: "waste",
         level: "90",
         battery: "95",
-        status: "online"
+        status: "online",
+        icon: L.icon.glyph({
+              className:"containerLevelGlyph",
+              glyph: "90%"
+        })
       },
       {
         coordinates: L.latLng(55.683824, 37.335218),
         name: "Waste container #45",
         type: "waste",
-        level: "2",
+        level: "20",
         battery: "99",
-        status: "online"
+        status: "online",
+        icon: L.icon.glyph({
+              className:"containerLevelGlyph",
+              glyph: "20%"
+        })
       },
       {
         coordinates: L.latLng(55.680333, 37.345947),
         name: "Waste container #88",
         type: "waste",
-        level: "10",
+        level: "470",
         battery: "94",
-        status: "online"
+        status: "online",
+        icon: L.icon.glyph({
+              className:"containerLevelGlyph",
+              glyph: "47%"
+        })
       },
       {
         coordinates: L.latLng(55.694659, 37.3438),
         name: "Waste container #92",
         type: "waste",
-        level: "28",
+        level: "42",
         battery: "98",
-        status: "online"
+        status: "online",
+        icon: L.icon.glyph({
+              className:"containerLevelGlyph",
+              glyph: "42%"
+        })
       },
       {
         coordinates: L.latLng(55.685413, 37.353031),
         name: "Waste container #10",
         type: "waste",
-        level: "19",
+        level: "5",
         battery: "95",
         status: "offline",
         icon: L.icon.glyph({
-          glyph: "0%"
+               className:"containerLevelGlyph",
+               glyph: "5%"
         })
       },
       {
         coordinates: L.latLng(55.679254, 37.34153),
         name: "Waste container #16",
         type: "waste",
-        level: "30",
+        level: "66",
         battery: "10",
-        status: "online"
+        status: "online",
+        icon: L.icon.glyph({
+              glyph: "66%",
+              className:"containerLevelGlyph",
+        })
       }
     ],
     truck: {
@@ -173,6 +205,7 @@ export default {
 </script>
 
 <style scoped>
+
 .row-selected {
   background-color: rgb(155, 204, 255);
 }

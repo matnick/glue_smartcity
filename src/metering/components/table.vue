@@ -12,16 +12,16 @@
                      </tr>
                   </template>
                   <template slot="items" slot-scope="props">
-                     <tr :class="props.item.selected ? 'row-selected text-left' : 'text-left'">
-                        <td @click="center_map(props.item)">{{ props.item.house_number }}</td>
-                        <td @click="center_map(props.item)">{{ props.item.street_name }}</td>
+                     <tr @click="center_map(props.item)" :class="props.item.selected ? 'row-selected text-left' : 'text-left'">
+                        <td>{{ props.item.house_number }}</td>
+                        <td>{{ props.item.street_name }}</td>
                         <td class="button-sm text-center">
-                           <v-btn icon class="ml-0 mr-2" @click="show_house_info(props.item)">
+                           <v-btn icon class="info-button ml-0 mr-2" @click.stop="show_house_info(props.item)">
                               <v-icon color="indigo" small>fa-info</v-icon>
                            </v-btn>
                         </td>
                         <td class="button-sm text-center">
-                           <v-btn icon class="ml-0 mr-2" @click="show_house_alert(props.item)" v-if="Object.keys(props.item.announcements).length !== 0">
+                           <v-btn icon class="warn-button ml-0 mr-2" @click.stop="show_house_alert(props.item)" v-if="Object.keys(props.item.announcements).length !== 0">
                               <v-icon color="red" small>fa-exclamation</v-icon>
                            </v-btn>
                         </td>
@@ -54,7 +54,7 @@
             alert
         },
         data: () => ({
-            pagination: { rowsPerPage: 5 }
+            pagination: { rowsPerPage: 7 }
         }),
         props: ["data"],
         computed: {
@@ -95,8 +95,17 @@
       height: 25px !important;
    }
 
+   .table-container >>> tbody tr {
+      height: 33px !important;
+      cursor: pointer;
+   }
+
    .table-container {
       box-shadow: none !important;
+   }
+
+   .elevation-1 {
+      overflow-y:auto;
    }
 
    .button-sm button {

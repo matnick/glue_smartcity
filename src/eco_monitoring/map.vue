@@ -44,7 +44,7 @@ export default {
   methods: {
     download_data() {
       Vue.axios
-        .get("https://it77.ru:8082/we/weather_stations")
+        .get("https://sk.iot.nokia.com/we/weather_simulated")
         .then(response => {
           this.stations = this.convert_backend_data(response.data);
           this.heatmapData.data = this.stations;
@@ -89,7 +89,7 @@ export default {
     },
     update() {
       Vue.axios
-        .get("https://it77.ru:8082/we/weather_api")
+        .get("https://sk.iot.nokia.com/we/weather_api")
         .then(response => {
           console.log(response.data[14]);
           this.heatmapData.data = response.data;
