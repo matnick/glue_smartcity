@@ -376,7 +376,7 @@ const store = new Vuex.Store({
     actions: {
         getWasteData: ({ commit }) => {
             Axios.get(
-                "https://it77.ru:8082/we/cleancity_data"
+                "https://sk.iot.nokia.com/we/cleancity_simulated"
             )
                 .then(response => {
                     commit("updateWasteMarkers", response.data.cleancity)

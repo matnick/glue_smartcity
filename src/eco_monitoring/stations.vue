@@ -46,7 +46,7 @@ export default {
   methods: {
     download_data() {
       Vue.axios
-        .get("https://it77.ru:8082/we/weather_stations")
+        .get("https://sk.iot.nokia.com/we/weather_simulated")
         .then(response => {
           this.station_table = this.convert_backend_data(response.data);
           console.log(response.data);
