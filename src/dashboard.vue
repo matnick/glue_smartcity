@@ -121,11 +121,12 @@
                                        <v-flex d-flex md6>
                                           <v-card :color="weather.color" to="/eco_monitoring/stations">
                                              <v-card-title primary class="title">
+                                                 <span class="title">{{$t("message.weather")}} </span>
                                                 <v-spacer></v-spacer>
                                                 <v-icon>fa-cloud</v-icon>
                                              </v-card-title>
                                              <v-card-text>
-                                                <span class="title">{{$t("message.weather")}} </span>
+
                                                 <span class="headline">{{ weather.temp }}C</span>
                                              </v-card-text>
                                           </v-card>
