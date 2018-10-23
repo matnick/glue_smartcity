@@ -5,12 +5,12 @@
             <v-layout row wrap fill-height >
                <v-flex d-flex md6 >
                   <v-card color="black" dark>
-                     <img class="cam-image" src="http://www.intek-m.ru/img/cams/cam_18/18_camera.jpg?t=1540305191309"/>
+                     <img class="cam-image" src="http://www.intek-m.ru/img/cams/cam_18/18_camera.jpg"/>
                   </v-card>
                </v-flex>
                <v-flex d-flex md6>
                   <v-card color="black" dark>
-                     <img class="cam-image" src="http://91.233.230.14/axis-cgi/jpg/image.cgi?dummy=1912692015369" />
+                     <img class="cam-image" src="http://www.intek-m.ru/img/cams/cam_13/13_camera.jpg" />
                   </v-card>
                </v-flex>
             </v-layout>
