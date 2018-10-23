@@ -173,6 +173,22 @@ export default {
                         icon: "fa-map",
                         path: "/parking/map",
                         text: this.$i18n.t("message.map")
+                    },
+                    {
+                        icon: "fa-dot-circle",
+                        path: "/parking/partner1",
+                        text: this.$i18n.t("message.partner")+" #1"
+                    },
+                    {
+                        icon: "fa-dot-circle",
+                        path: "/parking/partner2",
+                        text: this.$i18n.t("message.partner")+" #2"
+                    }
+                    ,
+                    {
+                        icon: "fa-dot-circle",
+                        path: "/parking/partner3",
+                        text: this.$i18n.t("message.partner")+" #3"
                     }
                 ]
             },
