@@ -5,7 +5,7 @@
             <v-layout row wrap fill-height >
                <v-flex d-flex md6 >
                   <v-card color="black" dark>
-                     <img class="cam-image" src="http://streaming.ivideon.com/preview/live?server=100-ca55919ff74f43b860daefc3e5172a3e&camera=0&sessionId=demo&q=2"/>
+                     <img class="cam-image" src="http://www.intek-m.ru/img/cams/cam_18/18_camera.jpg?t=1540305191309"/>
                   </v-card>
                </v-flex>
                <v-flex d-flex md6>
