@@ -143,7 +143,7 @@
                                  <div class="chart-background">
                                     <bar-chart :data="power.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
                                  </div>
-                                 <v-card-title primary class="title">{{$t("message.power")}}
+                                 <v-card-title primary class="title">{{$t("message.energy_supply")}}
                                     <v-spacer></v-spacer>
                                     <v-icon>fa-chart-bar</v-icon>
                                  </v-card-title>
