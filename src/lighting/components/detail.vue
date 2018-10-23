@@ -9,6 +9,7 @@
             <v-card-text>
                <div v-if="values.status === 'active'" class="subheading">{{$t("message.status")}}: {{$t("message.lamp_on")}}</div>
                <div v-if="values.status === 'inactive'" class="subheading">{{$t("message.status")}}: {{$t("message.lamp_off")}}</div>
+               <div v-if="values.status === 'failure'" class="subheading">{{$t("message.status")}}: {{$t("message.lamp_faliure")}}</div>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-text>
