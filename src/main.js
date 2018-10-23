@@ -9,6 +9,7 @@ import eco_monitoring_aqi from './eco_monitoring/aqi.vue'
 import eco_monitoring_sityair from './eco_monitoring/sityair.vue'
 
 import parking_map from './parking/map.vue'
+import parking_partner from './parking/partner.vue'
 import parking_stat from './parking/stat.vue'
 
 import lighting_main from './lighting/main.vue'
@@ -160,7 +161,20 @@ const router = new VueRouter({
    {
       path: '/parking/map',
       component: parking_map
-   }, {
+   },
+   {
+      path: '/parking/partner1',
+      component: parking_partner
+   },
+   {
+      path: '/parking/partner2',
+      component: parking_partner
+   },
+   {
+      path: '/parking/partner3',
+      component: parking_partner
+   },
+   {
       path: '/parking/stat',
       component: parking_stat
    }, {

@@ -192,8 +192,8 @@
                 this.$refs.housesTable.show(item);
             },
            polygon_click(house) {
-               house.selected = true;
                this.active_item.selected = false;
+               house.selected = true;
                this.active_item = house;
             },
             get_polygon_color(house) {
@@ -211,6 +211,11 @@
         mounted: function () {
             this.active_item = houses_data[0];
             this.active_item.selected = true;
+        },
+        beforeRouteLeave(to, from, next) {
+            this.active_item.selected = false;
+            next()
         }
+
     };
 </script>
