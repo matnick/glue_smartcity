@@ -80,7 +80,7 @@
                         <v-layout row wrap>
                            <v-flex  d-flex md12>
                               <v-layout  row wrap>
-                                 <v-flex d-flex md5>
+                                 <v-flex d-flex md6>
                                     <v-card :color="meters.color" to="/metering/company">
                                        <div class="chart-background">
                                           <bar-chart :data="meters.chartData" :hideAxis="true" :isDashboard="true"></bar-chart>
@@ -101,7 +101,7 @@
                                        </v-card-text>
                                     </v-card>
                                  </v-flex>
-                                 <v-flex d-flex md7>
+                                 <v-flex d-flex md6>
                                     <v-layout  row wrap>
                                        <v-flex d-flex md6>
                                           <v-card :color="air.color" to="/eco_monitoring/map">
