@@ -88,8 +88,8 @@ export default BaseChart.extend({
         .style("transform", (d, i) => `translate(${legendLeftOffset}, ${(i * 20) + legendTopOffset}px)`)
         
       legend.append('rect')
-        .attr("x", 0)
-        .attr("y", 0)
+        .attr("x", 6)
+        .attr("y", 2)
         .attr("width", 8)
         .attr("height", 8)
         .style("fill", (data) => data.color)

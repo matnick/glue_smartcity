@@ -223,8 +223,7 @@ table.table thead tr {
 }
 
 .donut-chart text {
-    font: 10px sans-serif;
-    text-anchor: middle;
+    font-size: 11px !important;
 }
 
 .containerLevelGlyph span {
