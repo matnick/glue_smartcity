@@ -213,7 +213,7 @@ export default {
     lamps: {
       power_on: 42,
       all: 421,
-      power: 527,
+      power: 21,
       color: "nokia_green",
       chartData: [
         { title: "5 июля", value: 3 },
