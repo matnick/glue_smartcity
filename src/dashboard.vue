@@ -150,7 +150,7 @@
                                  </v-card-title>
                                  <v-card-text>
                                     <span class="title">{{$t("message.consumption")}}: </span>
-                                    <span class="headline">{{ get_randomized_value(power.value) }} {{$t("message.kilowatt")}}</span><br>
+                                    <span class="headline">{{ get_randomized_value(power.value) }} {{$t("message.gigawatt")}}</span><br>
                                     <span class="title">{{$t("message.incidents")}}: </span>
                                     <span class="headline">{{ power.incidents }}</span>
                                  </v-card-text>
