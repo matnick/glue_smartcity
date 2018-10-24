@@ -218,11 +218,15 @@ table.table thead tr {
     justify-content: center;
 }
 
-.donut-chart {
+.donut-chart-basic, .donut-chart-extended {
     max-width: 100%;
 }
 
-.donut-chart text {
+.donut-chart-basic text {
+    font-size: 13px !important;
+}
+
+.donut-chart-extended text{
     font-size: 11px !important;
 }
 

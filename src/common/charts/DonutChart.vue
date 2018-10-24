@@ -1,6 +1,6 @@
 <template>
   <div class="donut-outer">
-    <svg class="donut-chart"></svg>
+    <svg class="donut-chart-basic"></svg>
   </div>
 </template>
 
