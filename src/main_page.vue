@@ -65,7 +65,7 @@
       <v-btn icon @click="toggle_menu"><v-icon>fa-bars</v-icon></v-btn>
       <v-menu>
          <v-toolbar-title class="no-logo-margin"  slot="activator">
-            <!-- <img class="mr-3 mt-2" src="./assets/logo_nokia.svg" height="25px" alt="Nokia Logo"> -->
+            <img class="mr-3 mt-2" src="./assets/logo_nokia.svg" height="25px" alt="Nokia Logo">
             {{$t("message.smart_city_control_center")}}
          </v-toolbar-title>
       </v-menu>
