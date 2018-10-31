@@ -52,26 +52,9 @@ let color_nokia = {
    grafana_grey: "#F6F7F9"
 }
 
-let color_rostelecom = {
-    blue: "#00AAE6",
-    gray_1: "#EDF3F5",
-    gray_2: "#BEC8D2",
-    gray_3: "#98A2AE",
-    gray_4: "#4D5766",
-    gray_5: "#273142",
-    light_blue: "#17C1F4",
-    red: "#FF3154",
-    yellow: "#FFFB00",
-    green: "#4BDD33",
-    orange: "#F47B20",
-    grafana_grey: "#F6F7F9",
-    rt_fuchsia: "#7801FF",
-    rt_acid_orange: "#FF4F13"
-}
-
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
-/*Vue.use(Vuetify, {
+Vue.use(Vuetify, {
    theme: {
       nokia_blue: color_nokia.blue,
       nokia_gray_1: color_nokia.gray_1,
@@ -94,32 +77,7 @@ import 'vuetify/dist/vuetify.min.css'
       success: color_nokia.green,
       grafana_grey: color_nokia.grafana_grey,
    }
-})*/
-
-Vue.use(Vuetify, {
-    theme: {
-        nokia_blue: color_rostelecom.blue,
-        nokia_gray_1: color_rostelecom.gray_1,
-        nokia_gray_2: color_rostelecom.gray_2,
-        nokia_gray_3: color_rostelecom.gray_3,
-        nokia_gray_4: color_rostelecom.gray_4,
-        nokia_gray_5: color_rostelecom.gray_5,
-        nokia_light_blue: color_rostelecom.light_blue,
-        nokia_red: color_rostelecom.red,
-        nokia_yellow: color_rostelecom.yellow,
-        nokia_green: color_rostelecom.green,
-        nokia_orange: color_rostelecom.orange,
-
-        primary: color_rostelecom.rt_fuchsia,
-        secondary: color_rostelecom.light_blue,
-        accent: color_rostelecom.yellow,
-        error: color_rostelecom.red,
-        warning: color_rostelecom.yellow,
-        info: color_rostelecom.gray_2,
-        success: color_rostelecom.green,
-        grafana_grey: color_rostelecom.grafana_grey,
-    }
-});
+})
 
 import VueRouter from 'vue-router'
 Vue.use(VueRouter)
