@@ -31,8 +31,14 @@
             <v-divider></v-divider>
             <v-card-text>
                <div v-if="!values.device_id" class="subheading">{{$t("message.brightness")}}: {{values.brightness}} %</div>
-               <v-slider class="brightness-slider" v-if="values.device_id && values.status === 'active'" @change="change_brightness(values)" v-model="values.brightness" thumb-label="true" :label="$t('message.brightness')"></v-slider>
-               <v-slider class="brightness-slider" v-if="values.device_id && values.status === 'inactive'" readonly v-model="values.brightness" :label="$t('message.brightness')"></v-slider>
+               <v-slider class="brightness-slider" v-if="values.device_id && values.status === 'active'"
+                         @change="change_brightness(values)" v-model="values.brightness" thumb-label
+                         :label="$t('message.brightness')">
+               </v-slider>
+               <v-slider class="brightness-slider"
+                         v-if="values.device_id && values.status === 'inactive' || values.status === 'changing'"
+                         readonly v-model="values.brightness" :label="$t('message.brightness')">
+               </v-slider>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-text>
@@ -82,18 +88,18 @@ export default {
       return (values.uptime / 5000) * 100
     },
     unilight_toggle(device) {
-          let target_dim_level = 0;
+          let target_dim_percent = 0;
           if(device.status === "active") {
-              target_dim_level = 0;
+              target_dim_percent = 0;
           }
           else {
-              target_dim_level = 200;
+              target_dim_percent = 50;
           }
           device.status = "changing";
           Vue.axios
               .get("https://sk.iot.nokia.com/we/unilight_dim_light", {
                   params: {
-                      set_dim: target_dim_level,
+                      set_dim: target_dim_percent,
                       device_id: device.device_id
                   }
               })
@@ -105,11 +111,10 @@ export default {
               })
     },
     change_brightness(device) {
-        let target_dim_level = 170 + (device.brightness/100)*84;
         Vue.axios
             .get("https://sk.iot.nokia.com/we/unilight_dim_light", {
                 params: {
-                    set_dim: target_dim_level,
+                    set_dim: device.brightness,
                     device_id: device.device_id
                 }
             })
