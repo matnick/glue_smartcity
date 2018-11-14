@@ -162,7 +162,7 @@
                 this.lights.filter(data => data.device_id).forEach(data => Vue.axios
                     .get("https://sk.iot.nokia.com/we/unilight_data")
                     .then(response => {
-                        let unilight_dim = response.data.unilight.system[data.device_id].out.ballast[0].light.dim.value;
+                        let unilight_dim = response.data.unilight.system[data.device_id].out.light.dim.value;
                         if (unilight_dim == 0) {
                             data.status = "inactive";
                             data.brightness = 0;
