@@ -22,7 +22,7 @@
             </v-card-text>
             <v-divider></v-divider>
             <v-card-text>
-               <div class="subheading">{{$t("message.current_consumption")}}: {{values.consumption}} {{$t("message.watt")}}</div>
+               <div class="subheading">{{$t("message.current_consumption")}}: {{values.brightness}} {{$t("message.watt")}}</div>
             </v-card-text>
             <v-divider></v-divider>
             <v-card-text>
