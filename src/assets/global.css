@@ -233,3 +233,7 @@ table.table thead tr {
 .containerLevelGlyph span {
     font-size: 10px !important;
 }
+
+.brightness-slider label {
+    color: #000 !important;
+}

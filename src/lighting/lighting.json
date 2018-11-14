@@ -9,6 +9,7 @@
       "status": "active",
       "consumption": 100,
       "temperature": 27,
+      "device_id": "44B5BAB6",
       "brightness": 100,
       "service_time": 90,
       "uptime": 2334,

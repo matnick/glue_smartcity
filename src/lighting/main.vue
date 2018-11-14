@@ -56,7 +56,7 @@
             </v-layout>
          </v-flex>
       </v-layout>
-      <detail ref="lightingTable"></detail>
+      <detail ref="lightingTable" @unilight_change="update_unilight"></detail>
    </v-container>
 </template>
 
@@ -158,7 +158,24 @@
                 );
                 this.map.zoom = 17;
             },
-
+            update_unilight() {
+                this.lights.filter(data => data.device_id).forEach(data => Vue.axios
+                    .get("https://sk.iot.nokia.com/we/unilight_data")
+                    .then(response => {
+                        let unilight_dim = response.data.unilight.system[data.device_id].out.ballast[0].light.dim.value;
+                        if (unilight_dim == 0) {
+                            data.status = "inactive";
+                            data.brightness = 0;
+                        }
+                        else {
+                            data.status = "active";
+                            data.brightness = Math.round(((unilight_dim - 170)/84)*100);
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error);
+                    }))
+            }
         },
         computed: {
             random_data() {
@@ -237,6 +254,9 @@
                     }
                 ];
             },
+        },
+        mounted: function () {
+            this.update_unilight()
         }
     };
 </script>
